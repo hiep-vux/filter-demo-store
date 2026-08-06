@@ -76,7 +76,9 @@ html:has(#globo-demo-page) body::-webkit-scrollbar{
 }
 
 .demo-sidebar::-webkit-scrollbar-track,
-#gl-search-listbox::-webkit-scrollbar-track,
+#gl-search-listbox::-webkit-scrollbar-track{
+    background: #fff;
+}
 html:has(#globo-demo-page)::-webkit-scrollbar-track,
 html:has(#globo-demo-page) body::-webkit-scrollbar-track{
   background: #14171a;
