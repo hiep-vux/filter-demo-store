@@ -58,6 +58,16 @@ button.gl-d-close-btn {
   display: block;
 }
 
+.gl-fullscreen-layer .gl-d-searchbox-input {
+    height: 35px;
+    line-height: 35px;
+}
+.gl-fullscreen-layer .gl-d-searchbox-icon {
+    height: 35px;
+    line-height: 35px;
+    width: 35px;
+}
+
 /*css scroll bar Firefox */
 .demo-sidebar,
 html:has(#globo-demo-page),
