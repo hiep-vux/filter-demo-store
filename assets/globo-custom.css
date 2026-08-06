@@ -6,11 +6,13 @@ html #glFilter-search-popup{
 }
 #glFilter-search-popup{
   position: absolute;
-  inset: 68px 0px auto;
+  inset: 70px 0px auto;
   z-index: 3;
+  box-shadow: rgba(20, 20, 20, 0.12) 0px 24px 48px;
+  animation: 0.18s ease 0s 1 normal both running omFade;
 }
 .gl-filter-search-fullscreen .gl-fullscreen-layer {
-    background: #fff;
+    background-color: #fff ;
 }
 .gl-fullscreen-layer .gl-fullscreen-header {
   display: flex;
