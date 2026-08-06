@@ -58,11 +58,11 @@ button.gl-d-close-btn {
   display: block;
 }
 
-.gl-fullscreen-layer .gl-d-searchbox-input {
+#glFilter-search-popup .gl-fullscreen-layer .gl-d-searchbox-input {
     height: 35px !important;
     line-height: 35px !important;
 }
-.gl-fullscreen-layer .gl-d-searchbox-icon {
+#glFilter-search-popup .gl-fullscreen-layer .gl-d-searchbox-icon {
     height: 35px;
     line-height: 35px;
     width: 35px;
