@@ -896,4 +896,7 @@ span.header-logo__image-container.header-logo__image-container--original {
 .demo-store-footer__text {
     line-height: 1.25;
 }
+.gl-search-open #header-group{
+  z-index: 3;
+}
 @keyframes omFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
