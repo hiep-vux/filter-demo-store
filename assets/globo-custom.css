@@ -41,6 +41,9 @@ button.gl-d-close-btn {
   max-height: 460px;
   overflow: auto;
 }
+.gl-fullscreen-layer .gl-d-searchbox {
+    gap: 14px;
+}
 .gl-search-backdrop{
   bottom: 0;
   display: none;
