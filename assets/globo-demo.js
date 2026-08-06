@@ -1,4 +1,19 @@
 const ACTIVE_CLASS = 'demo-segment__button--active';
+const LAYOUT_QUERY_PARAM = 'layout_filter';
+const LAYOUT_QUERY_VALUES = {
+  sidebar: '1',
+  horizontal: '2',
+  drawer: '3',
+};
+const QUERY_VALUE_LAYOUTS = {
+  1: 'sidebar',
+  2: 'horizontal',
+  3: 'drawer',
+};
+
+function isFilterResultsPage(pathname) {
+  return /^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?(?:collections(?:\/|$)|search\/?$)/i.test(pathname);
+}
 
 class GloboDemoControls {
   /** @param {HTMLElement} toolbar */
@@ -8,6 +23,7 @@ class GloboDemoControls {
     this.stage = this.root?.querySelector('.globo-page_content');
     this.sidebar = this.root?.querySelector('#globo-aside_demo');
     this.mobileBreakpoint = window.matchMedia('(max-width: 1179px)');
+    this.isFilterResultsPage = isFilterResultsPage(window.location.pathname);
 
     this.defaults = {
       layout: toolbar.dataset.defaultLayout || 'sidebar',
@@ -16,7 +32,10 @@ class GloboDemoControls {
       guideOpen: !this.mobileBreakpoint.matches,
     };
 
-    this.state = { ...this.defaults };
+    this.state = {
+      ...this.defaults,
+      layout: this.getInitialLayout(),
+    };
     this.handleClick = this.handleClick.bind(this);
     this.handleViewportChange = this.handleViewportChange.bind(this);
   }
@@ -45,6 +64,11 @@ class GloboDemoControls {
     const value = target.dataset.demoValue;
 
     if (control && value) {
+      if (control === 'layout') {
+        this.selectLayout(value);
+        return;
+      }
+
       this.setState({ [control]: value });
       return;
     }
@@ -75,6 +99,33 @@ class GloboDemoControls {
     this.render({ previous, emit: true });
   }
 
+  getInitialLayout() {
+    if (!this.isFilterResultsPage) return this.defaults.layout;
+
+    const queryValue = new URL(window.location.href).searchParams.get(LAYOUT_QUERY_PARAM);
+    return QUERY_VALUE_LAYOUTS[queryValue] || this.defaults.layout;
+  }
+
+  selectLayout(layout) {
+    if (!(layout in LAYOUT_QUERY_VALUES)) return;
+
+    if (!this.isFilterResultsPage) {
+      this.setState({ layout });
+      return;
+    }
+
+    const url = new URL(window.location.href);
+    const queryValue = LAYOUT_QUERY_VALUES[layout];
+
+    if (url.searchParams.get(LAYOUT_QUERY_PARAM) === queryValue) {
+      this.setState({ layout });
+      return;
+    }
+
+    url.searchParams.set(LAYOUT_QUERY_PARAM, queryValue);
+    window.location.assign(url.toString());
+  }
+
   reset() {
     this.clearActiveFilters();
     this.state = { ...this.defaults };
@@ -96,7 +147,6 @@ class GloboDemoControls {
     this.updateGuide(guideOpen);
     this.updateStage(device);
     this.updateStore(store);
-    this.updateFilterLayout(layout);
 
     if (options.emit) {
       this.root.dispatchEvent(
@@ -135,45 +185,14 @@ class GloboDemoControls {
 
   updateStage(device) {
     if (!this.stage) return;
-    this.stage.style.maxWidth = device === 'mobile' ? '430px' : '1240px';
+    this.stage.setAttribute('mode', device);
+    this.stage.style.removeProperty('max-width');
   }
 
   updateStore(store) {
     this.root.querySelectorAll('[data-demo-store-only]').forEach((element) => {
       element.hidden = element.dataset.demoStoreOnly !== store;
     });
-  }
-
-  updateFilterLayout(layout) {
-    const collection = this.root.querySelector('.collection-wrapper');
-    const wrapper = collection?.querySelector(':scope > .facets-block-wrapper:not(#filters-drawer)');
-    const facets = wrapper?.querySelector('.facets');
-    const toggle = collection?.querySelector(':scope > .facets-toggle');
-    const form = wrapper?.querySelector('facets-form-component');
-    const drawer = this.root.querySelector('#filters-drawer');
-
-    if (!wrapper || !facets) return;
-
-    const isDrawer = layout === 'drawer';
-    const isSidebar = layout === 'sidebar';
-    wrapper.hidden = isDrawer;
-    toggle?.toggleAttribute('data-demo-force-visible', isDrawer);
-
-    wrapper.classList.toggle('facets-block-wrapper--vertical', isSidebar);
-    wrapper.classList.toggle('facets-block-wrapper--horizontal', !isSidebar);
-    facets.classList.toggle('facets--vertical', isSidebar);
-    facets.classList.toggle('facets--horizontal', !isSidebar);
-    form?.setAttribute('form-style', isSidebar ? 'vertical' : 'horizontal');
-
-    wrapper.style.setProperty(
-      '--grid-column--desktop',
-      isSidebar ? '2 / var(--facets-vertical-col-width)' : 'var(--centered)'
-    );
-    wrapper.style.setProperty('--facets-margin', isSidebar ? '0 20px 0 0' : '0 0 8px 0');
-
-    if (!isDrawer && drawer && 'close' in drawer && typeof drawer.close === 'function') {
-      drawer.close();
-    }
   }
 
   clearActiveFilters() {
@@ -192,11 +211,6 @@ function installDemoStyles() {
   style.id = 'globo-demo-controls-style';
   style.textContent = `
     #globo-demo-page [hidden] { display: none !important; }
-    #globo-demo-page .facets-toggle[data-demo-force-visible] { display: flex !important; }
-    #globo-demo-page[data-demo-device="mobile"] .globo-page_content {
-      width: 100%;
-      margin-inline: auto;
-    }
   `;
   document.head.append(style);
 }
