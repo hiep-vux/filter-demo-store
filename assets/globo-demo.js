@@ -425,3 +425,15 @@ document.addEventListener('shopify:section:load', (event) => {
 
   initDemoControls();
 });
+
+
+
+window.addEventListener('globoFilterSearchDrawerOpened', function () {
+    const searchPopup = document.querySelector('#glFilter-search-popup');
+    const mainContent = document.querySelector('#MainContent');
+
+    if (!searchPopup || !mainContent) return;
+
+    mainContent.parentNode.insertBefore(searchPopup, mainContent);
+
+});
