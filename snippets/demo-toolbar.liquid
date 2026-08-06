@@ -1,6 +1,13 @@
-<div data-dc-tpl="4" class="demo-toolbar">
+<div
+    data-dc-tpl="4"
+    class="demo-toolbar"
+    data-demo-toolbar
+    data-default-layout="sidebar"
+    data-default-store="fashion"
+    data-default-device="desktop"
+>
     <div data-dc-tpl="5" class="demo-toolbar__brand">
-        <img data-dc-tpl="6"  class="demo-toolbar__logo" src="{{ 'app_icon.webp' | asset_url }}" alt="Smart Product Filter &amp; Search" >
+        <img data-dc-tpl="6" class="demo-toolbar__logo" src="{{ 'app_icon.webp' | asset_url }}" alt="Smart Product Filter &amp; Search" width="24" height="24">
         <span data-dc-tpl="7" class="demo-toolbar__name">
             Smart Product Filter &amp; Search
         </span>
@@ -15,16 +22,16 @@
             Filter layout
         </span>
 
-        <div data-dc-tpl="11" class="demo-segment">
-            <button data-dc-tpl="13" class="demo-segment__button demo-segment__button--active">
+        <div data-dc-tpl="11" class="demo-segment" role="group" aria-label="Filter layout">
+            <button type="button" data-dc-tpl="13" data-demo-control="layout" data-demo-value="sidebar" class="demo-segment__button demo-segment__button--active" aria-pressed="true">
                 <span class="sc-interp">Sidebar</span>
             </button>
 
-            <button data-dc-tpl="13" class="demo-segment__button">
+            <button type="button" data-dc-tpl="13" data-demo-control="layout" data-demo-value="horizontal" class="demo-segment__button" aria-pressed="false">
                 <span class="sc-interp">Horizontal</span>
             </button>
 
-            <button data-dc-tpl="13" class="demo-segment__button">
+            <button type="button" data-dc-tpl="13" data-demo-control="layout" data-demo-value="drawer" class="demo-segment__button" aria-pressed="false">
                 <span class="sc-interp">Drawer</span>
             </button>
         </div>
@@ -35,36 +42,36 @@
             Store
         </span>
 
-        <div data-dc-tpl="16" class="demo-segment">
-            <button data-dc-tpl="18" class="demo-segment__button">
+        <div data-dc-tpl="16" class="demo-segment" role="group" aria-label="Demo store">
+            <button type="button" data-dc-tpl="18" data-demo-control="store" data-demo-value="fashion" class="demo-segment__button demo-segment__button--active" aria-pressed="true">
                 <span class="sc-interp">Fashion</span>
             </button>
 
-            <button data-dc-tpl="18" class="demo-segment__button demo-segment__button--active">
+            <button type="button" data-dc-tpl="18" data-demo-control="store" data-demo-value="auto" class="demo-segment__button" aria-pressed="false">
                 <span class="sc-interp">Auto parts</span>
             </button>
         </div>
     </div>
 
     <div data-dc-tpl="19" class="demo-toolbar__group">
-        <div data-dc-tpl="20" class="demo-segment">
-            <button data-dc-tpl="22" class="demo-segment__button demo-segment__button--active">
+        <div data-dc-tpl="20" class="demo-segment" role="group" aria-label="Preview device">
+            <button type="button" data-dc-tpl="22" data-demo-control="device" data-demo-value="desktop" class="demo-segment__button demo-segment__button--active" aria-pressed="true">
                 <span class="sc-interp">Desktop</span>
             </button>
 
-            <button data-dc-tpl="22" class="demo-segment__button">
+            <button type="button" data-dc-tpl="22" data-demo-control="device" data-demo-value="mobile" class="demo-segment__button" aria-pressed="false">
                 <span class="sc-interp">Mobile</span>
             </button>
         </div>
     </div>
 
     <div data-dc-tpl="23" class="demo-toolbar__actions">
-        <button data-dc-tpl="24" class="scp0 demo-button demo-button--outline">
+        <button type="button" data-dc-tpl="24" data-demo-action="reset" class="scp0 demo-button demo-button--outline">
             Reset demo
         </button>
 
-        <button data-dc-tpl="25" class="scp1 demo-button demo-button--dark">
-            <span class="sc-interp">Hide guide</span>
+        <button type="button" data-dc-tpl="25" data-demo-action="toggle-guide" class="scp1 demo-button demo-button--dark" aria-controls="globo-aside_demo" aria-expanded="true">
+            <span class="sc-interp" data-demo-guide-label>Hide guide</span>
         </button>
 
         <a
