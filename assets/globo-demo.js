@@ -43,10 +43,13 @@ class GloboDemoControls {
 
     this.state = {
       ...this.defaults,
-      layout: this.getInitialLayout(),
+      layout: this.getInitialLayout(persistedState.layout),
       device: ['desktop', 'mobile'].includes(persistedState.device)
         ? persistedState.device
         : this.defaults.device,
+      guideOpen: typeof persistedState.guideOpen === 'boolean'
+        ? persistedState.guideOpen
+        : this.defaults.guideOpen,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleViewportChange = this.handleViewportChange.bind(this);
@@ -148,6 +151,8 @@ class GloboDemoControls {
     try {
       const persistedState = {
         device: this.state.device,
+        layout: this.state.layout,
+        guideOpen: this.state.guideOpen,
         doneSteps: Array.from(this.doneSteps),
       };
 
@@ -235,11 +240,15 @@ class GloboDemoControls {
     this.updateGuideProgress();
   }
 
-  getInitialLayout() {
-    if (!this.isFilterResultsPage) return this.defaults.layout;
+  getInitialLayout(persistedLayout) {
+    const storedLayout = persistedLayout in LAYOUT_QUERY_VALUES
+      ? persistedLayout
+      : this.defaults.layout;
+
+    if (!this.isFilterResultsPage) return storedLayout;
 
     const queryValue = new URL(window.location.href).searchParams.get(LAYOUT_QUERY_PARAM);
-    return QUERY_VALUE_LAYOUTS[queryValue] || this.defaults.layout;
+    return QUERY_VALUE_LAYOUTS[queryValue] || storedLayout;
   }
 
   selectLayout(layout) {
@@ -259,6 +268,7 @@ class GloboDemoControls {
     }
 
     url.searchParams.set(LAYOUT_QUERY_PARAM, queryValue);
+    this.state = { ...this.state, layout };
     this.persistState();
     window.location.assign(url.toString());
   }
@@ -378,6 +388,7 @@ function initDemoControls() {
   const controls = new GloboDemoControls(toolbar);
   controls.init();
   window.globoDemoControls = controls;
+  requestAnimationFrame(() => document.documentElement.removeAttribute('data-demo-prepaint'));
 }
 
 if (document.readyState === 'loading') {

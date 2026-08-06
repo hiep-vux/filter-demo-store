@@ -75,6 +75,14 @@ html:has(#globo-demo-page) body::-webkit-scrollbar-thumb:hover{
 html[data-demo-device="mobile"] .globo-page_content.page-wrapper {
     max-width: 430px;
 }
+html[data-demo-prepaint="true"] .globo-page_content.page-wrapper,
+html[data-demo-prepaint="true"] .demo-sidebar,
+html[data-demo-prepaint="true"] .demo-guide-pill,
+html[data-demo-prepaint="true"] .demo-progress__fill,
+html[data-demo-prepaint="true"] .demo-segment__button {
+    animation: none !important;
+    transition: none !important;
+}
 
 /* css demo-sidebar */
 .demo-guide-pill {
@@ -166,6 +174,10 @@ html[data-demo-device="mobile"] .globo-page_content.page-wrapper {
 
 #globo-demo-page[data-demo-guide="closed"] .demo-guide-pill {
   display: flex;
+}
+
+#globo-demo-page[data-demo-guide="closed"] .demo-sidebar {
+  display: none;
 }
 
 .demo-sidebar__header {

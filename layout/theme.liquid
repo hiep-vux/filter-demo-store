@@ -8,20 +8,32 @@
   <head> 
     <script>
       (() => {
-        const fallbackState = { device: 'desktop', doneSteps: [] };
+        const defaultGuideOpen = !window.matchMedia('(max-width: 1179px)').matches;
+        const fallbackState = { device: 'desktop', layout: 'sidebar', guideOpen: defaultGuideOpen, doneSteps: [] };
 
         try {
           const storedState = JSON.parse(sessionStorage.getItem('globo-demo:session-state') || '{}');
+          const validLayouts = ['sidebar', 'horizontal', 'drawer'];
+          const isFilterResultsPage = /^\/(?:[a-z]{2}(?:-[a-z]{2})?\/)?(?:collections(?:\/|$)|search\/?$)/i.test(location.pathname);
+          const queryLayouts = { 1: 'sidebar', 2: 'horizontal', 3: 'drawer' };
+          const queryLayout = isFilterResultsPage
+            ? queryLayouts[new URL(location.href).searchParams.get('layout_filter')]
+            : null;
+          const persistedLayout = validLayouts.includes(storedState.layout) ? storedState.layout : 'sidebar';
           const initialState = {
             device: storedState.device === 'mobile' ? 'mobile' : 'desktop',
+            layout: queryLayout || persistedLayout,
+            guideOpen: typeof storedState.guideOpen === 'boolean' ? storedState.guideOpen : defaultGuideOpen,
             doneSteps: Array.isArray(storedState.doneSteps) ? storedState.doneSteps : [],
           };
 
           window.__globoDemoInitialState = initialState;
           document.documentElement.dataset.demoDevice = initialState.device;
+          document.documentElement.dataset.demoPrepaint = 'true';
         } catch (error) {
           window.__globoDemoInitialState = fallbackState;
           document.documentElement.dataset.demoDevice = fallbackState.device;
+          document.documentElement.dataset.demoPrepaint = 'true';
         }
       })();
     </script>
@@ -82,16 +94,31 @@
       (() => {
         const root = document.getElementById('globo-demo-page');
         const toolbar = root?.querySelector('[data-demo-toolbar]');
-        const device = window.__globoDemoInitialState?.device === 'mobile' ? 'mobile' : 'desktop';
+        const initialState = window.__globoDemoInitialState || {};
+        const device = initialState.device === 'mobile' ? 'mobile' : 'desktop';
+        const layout = ['sidebar', 'horizontal', 'drawer'].includes(initialState.layout)
+          ? initialState.layout
+          : 'sidebar';
+        const guideOpen = initialState.guideOpen !== false;
 
         if (!root || !toolbar) return;
         root.dataset.demoDevice = device;
+        root.dataset.demoLayout = layout;
+        root.dataset.demoGuide = guideOpen ? 'open' : 'closed';
 
-        toolbar.querySelectorAll('[data-demo-control="device"]').forEach((button) => {
-          const isActive = button.dataset.demoValue === device;
-          button.classList.toggle('demo-segment__button--active', isActive);
-          button.setAttribute('aria-pressed', String(isActive));
+        ['device', 'layout'].forEach((control) => {
+          const activeValue = control === 'device' ? device : layout;
+          toolbar.querySelectorAll(`[data-demo-control="${control}"]`).forEach((button) => {
+            const isActive = button.dataset.demoValue === activeValue;
+            button.classList.toggle('demo-segment__button--active', isActive);
+            button.setAttribute('aria-pressed', String(isActive));
+          });
         });
+
+        const guideToggle = toolbar.querySelector('[data-demo-action="toggle-guide"]');
+        const guideLabel = toolbar.querySelector('[data-demo-guide-label]');
+        guideToggle?.setAttribute('aria-expanded', String(guideOpen));
+        if (guideLabel) guideLabel.textContent = guideOpen ? 'Hide guide' : 'Show guide';
       })();
     </script>
     <div class="globo-page_body">
