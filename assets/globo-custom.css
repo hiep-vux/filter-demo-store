@@ -20,6 +20,7 @@
     padding: 22px 22px 70px;
     background: #000;
 }
+
 .globo-page_content.page-wrapper {
     width: 100%;
     max-width: 1240px;
@@ -31,7 +32,9 @@
     overflow: hidden;
     transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.globo-page_content.page-wrapper[mode="mobile"]{
+    max-width: 430px;
+}
 
 /* css demo-sidebar */
 .demo-sidebar {
