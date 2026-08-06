@@ -12,7 +12,7 @@ html #glFilter-search-popup{
   animation: 0.18s ease 0s 1 normal both running omFade;
 }
 .gl-filter-search-fullscreen .gl-fullscreen-layer {
-    background-color: #fff ;
+    background-color: #fff !important;
 }
 .gl-fullscreen-layer .gl-fullscreen-header {
   display: flex;
