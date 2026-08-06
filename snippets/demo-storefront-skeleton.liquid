@@ -1,0 +1,52 @@
+<div class="demo-storefront-skeleton" data-demo-storefront-skeleton aria-hidden="true">
+  <span class="visually-hidden" role="status">Loading storefront</span>
+
+  <div class="demo-storefront-skeleton__header">
+    <span class="demo-skeleton-shape demo-storefront-skeleton__logo"></span>
+    <div class="demo-storefront-skeleton__nav">
+      <span class="demo-skeleton-shape"></span>
+      <span class="demo-skeleton-shape"></span>
+      <span class="demo-skeleton-shape"></span>
+      <span class="demo-skeleton-shape"></span>
+    </div>
+    <span class="demo-skeleton-shape demo-storefront-skeleton__search"></span>
+    <span class="demo-skeleton-shape demo-storefront-skeleton__icon"></span>
+  </div>
+
+  <div class="demo-storefront-skeleton__body">
+    <div class="demo-storefront-skeleton__heading">
+      <span class="demo-skeleton-shape demo-storefront-skeleton__eyebrow"></span>
+      <span class="demo-skeleton-shape demo-storefront-skeleton__title"></span>
+      <span class="demo-skeleton-shape demo-storefront-skeleton__subtitle"></span>
+    </div>
+
+    <div class="demo-storefront-skeleton__controls">
+      <span class="demo-skeleton-shape"></span>
+      <span class="demo-skeleton-shape"></span>
+      <span class="demo-skeleton-shape"></span>
+    </div>
+
+    <div class="demo-storefront-skeleton__results">
+      <div class="demo-storefront-skeleton__filters">
+        {%- for index in (1..6) -%}
+          <div class="demo-storefront-skeleton__filter">
+            <span class="demo-skeleton-shape"></span>
+            <span class="demo-skeleton-shape"></span>
+            <span class="demo-skeleton-shape"></span>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <div class="demo-storefront-skeleton__grid">
+        {%- for index in (1..6) -%}
+          <div class="demo-storefront-skeleton__card">
+            <span class="demo-skeleton-shape demo-storefront-skeleton__image"></span>
+            <span class="demo-skeleton-shape demo-storefront-skeleton__card-title"></span>
+            <span class="demo-skeleton-shape demo-storefront-skeleton__card-meta"></span>
+            <span class="demo-skeleton-shape demo-storefront-skeleton__price"></span>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>

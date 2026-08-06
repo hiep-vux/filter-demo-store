@@ -10,6 +10,21 @@
       (() => {
         const defaultGuideOpen = !window.matchMedia('(max-width: 1179px)').matches;
         const fallbackState = { device: 'desktop', layout: 'sidebar', guideOpen: defaultGuideOpen, doneSteps: [] };
+        document.documentElement.dataset.demoLoading = 'true';
+
+        const finishStorefrontLoading = () => {
+          requestAnimationFrame(() => {
+            document.documentElement.dataset.demoLoading = 'complete';
+          });
+        };
+
+        const loadingTimeout = window.setTimeout(finishStorefrontLoading, 8000);
+        window.addEventListener('load', () => {
+          window.clearTimeout(loadingTimeout);
+          finishStorefrontLoading();
+        }, { once: true });
+        document.addEventListener('globo-demo:storefront-ready', finishStorefrontLoading, { once: true });
+        window.finishGloboDemoLoading = finishStorefrontLoading;
 
         try {
           const storedState = JSON.parse(sessionStorage.getItem('globo-demo:session-state') || '{}');
@@ -166,6 +181,7 @@
               window.__globoDemoInitialState?.device === 'mobile' ? 'mobile' : 'desktop'
             );
           </script>
+          {% render 'demo-storefront-skeleton' %}
         
               <div id="header-group">
                 {% sections 'header-group' %}
