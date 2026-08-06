@@ -1,0 +1,157 @@
+{% render 'demo-sidebar', section: section %}
+
+{% schema %}
+{
+  "name": "Demo guide",
+  "tag": "section",
+  "class": "demo-sidebar-section",
+  "enabled_on": {
+    "groups": ["aside"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Guide"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Try it yourself"
+    },
+    {
+      "type": "text",
+      "id": "pill_label",
+      "label": "Collapsed label",
+      "default": "Try it yourself"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Each step runs on the storefront to your left. Tap one and watch what the app does.</p>"
+    },
+    {
+      "type": "text",
+      "id": "close_label",
+      "label": "Close button label",
+      "default": "Close guide"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_progress",
+      "label": "Show progress",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "progress_label",
+      "label": "Progress accessibility label",
+      "default": "Guide progress"
+    },
+    {
+      "type": "header",
+      "content": "Footer call to action"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_footer",
+      "label": "Show footer call to action",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "footer_text",
+      "label": "Text",
+      "default": "<p>Everything here is served by the app on a stock Horizon theme. No theme code edits.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Install on my store"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "info": "The Globo app listing is used when no URL is selected."
+    },
+    {
+      "type": "checkbox",
+      "id": "open_new_tab",
+      "label": "Open button in a new tab",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Group heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Feature group"
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "name": "Guide card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_id",
+          "label": "Step ID",
+          "info": "Use a unique value. It is used to save progress."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Guide step"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "action",
+          "label": "Action attribute",
+          "info": "Output as data-demo-step-action for future JavaScript actions."
+        },
+        {
+          "type": "select",
+          "id": "store",
+          "label": "Show for store",
+          "options": [
+            {
+              "value": "all",
+              "label": "All stores"
+            },
+            {
+              "value": "fashion",
+              "label": "Fashion"
+            },
+            {
+              "value": "auto",
+              "label": "Auto parts"
+            }
+          ],
+          "default": "all"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 40,
+  "presets": [
+    {
+      "name": "Demo guide"
+    }
+  ]
+}
+{% endschema %}

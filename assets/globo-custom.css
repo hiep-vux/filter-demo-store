@@ -456,6 +456,10 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
   display: none;
 }
 
+.demo-sidebar-section {
+  display: contents;
+}
+
 .demo-sidebar__header {
   position: sticky;
   top: -22px;
@@ -497,6 +501,11 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
   color: #8a929a;
 }
 
+.demo-sidebar__description p,
+.demo-footer__text p {
+  margin: 0;
+}
+
 .demo-progress {
   display: flex;
   align-items: center;
@@ -528,7 +537,7 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
 .demo-sections {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 7px;
 }
 
 .demo-footer {
@@ -572,6 +581,14 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
     text-transform: uppercase;
     color: #6b7480;
     line-height: normal;
+}
+
+.demo-section__title--block {
+    margin: 15px 0 0;
+}
+
+.demo-section__title--block:first-child {
+    margin-top: 0;
 }
 
 .demo-card {

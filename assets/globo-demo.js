@@ -70,6 +70,22 @@ class GloboDemoControls {
     this.mobileBreakpoint.removeEventListener('change', this.handleViewportChange);
   }
 
+  refreshGuide() {
+    this.sidebar = this.root?.querySelector('#globo-aside_demo');
+    this.guideCards = Array.from(this.root?.querySelectorAll('.demo-card[data-demo-step]') || []);
+
+    const validStepIds = new Set(this.guideCards.map((card) => card.dataset.demoStep));
+    this.doneSteps = new Set(
+      Array.from(this.doneSteps).filter((stepId) => validStepIds.has(stepId))
+    );
+
+    this.restoreGuideProgress();
+    this.updateGuideProgress();
+    this.updateGuide(this.state.guideOpen);
+    this.updateStore(this.state.store);
+    this.persistState();
+  }
+
   /** @param {MouseEvent} event */
   handleClick(event) {
     const target = event.target instanceof Element
@@ -397,4 +413,15 @@ if (document.readyState === 'loading') {
   initDemoControls();
 }
 
-document.addEventListener('shopify:section:load', initDemoControls);
+document.addEventListener('shopify:section:load', (event) => {
+  const section = event.target instanceof Element ? event.target : null;
+  const hasGuide = section?.matches('.demo-sidebar-section')
+    || section?.querySelector('#globo-aside_demo');
+
+  if (hasGuide && window.globoDemoControls) {
+    window.globoDemoControls.refreshGuide();
+    return;
+  }
+
+  initDemoControls();
+});

@@ -1,0 +1,269 @@
+{
+  "type": "aside",
+  "name": "Demo guide",
+  "sections": {
+    "demo_guide": {
+      "type": "demo-sidebar",
+      "name": "Demo guide",
+      "settings": {
+        "title": "Try it yourself",
+        "pill_label": "Try it yourself",
+        "description": "<p>Each step runs on the storefront to your left. Tap one and watch what the app does.</p>",
+        "close_label": "Close guide",
+        "show_progress": true,
+        "progress_label": "Guide progress",
+        "show_footer": true,
+        "footer_text": "<p>Everything here is served by the app on a stock Horizon theme. No theme code edits.</p>",
+        "button_label": "Install on my store",
+        "button_url": "",
+        "open_new_tab": true
+      },
+      "blocks": {
+        "heading_filtering": {
+          "type": "heading",
+          "settings": {
+            "title": "Filtering"
+          }
+        },
+        "step_tree": {
+          "type": "step",
+          "settings": {
+            "step_id": "tree",
+            "title": "Nested filter tree",
+            "description": "Opens Sneakers and drills into Low Sneakers.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_multi": {
+          "type": "step",
+          "settings": {
+            "step_id": "multi",
+            "title": "Stack three filters at once",
+            "description": "Category + heel height + colour, all live.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_merged": {
+          "type": "step",
+          "settings": {
+            "step_id": "merged",
+            "title": "Merged colour values",
+            "description": "One Blue Group swatch covers Navy, Cobalt and Sky.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_meta": {
+          "type": "step",
+          "settings": {
+            "step_id": "meta",
+            "title": "Filter by metafield",
+            "description": "Material comes from a product metafield.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_price": {
+          "type": "step",
+          "settings": {
+            "step_id": "price",
+            "title": "Price range",
+            "description": "Narrows to $40–$55 and refits the grid.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_rts": {
+          "type": "step",
+          "settings": {
+            "step_id": "rts",
+            "title": "Tag-based filter",
+            "description": "Only products tagged ready-to-ship.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_split": {
+          "type": "step",
+          "settings": {
+            "step_id": "split",
+            "title": "Variants as separate products",
+            "description": "Each colourway becomes its own card.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "heading_search": {
+          "type": "heading",
+          "settings": {
+            "title": "Search"
+          }
+        },
+        "step_zero": {
+          "type": "step",
+          "settings": {
+            "step_id": "zero",
+            "title": "Zero-character suggestions",
+            "description": "Popular searches before you type a letter.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_instant": {
+          "type": "step",
+          "settings": {
+            "step_id": "instant",
+            "title": "Instant suggestions",
+            "description": "One letter is enough.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_semantic": {
+          "type": "step",
+          "settings": {
+            "step_id": "semantic",
+            "title": "AI semantic search",
+            "description": "Try a full phrase, not keywords.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_typo": {
+          "type": "step",
+          "settings": {
+            "step_id": "typo",
+            "title": "Spellcheck & typo tolerance",
+            "description": "Types hell, returns heels.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_syn": {
+          "type": "step",
+          "settings": {
+            "step_id": "syn",
+            "title": "Synonyms",
+            "description": "Sport also pulls sneakers.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_merch": {
+          "type": "step",
+          "settings": {
+            "step_id": "merch",
+            "title": "Merchandising rules",
+            "description": "Sandals pins a chosen product first.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_empty": {
+          "type": "step",
+          "settings": {
+            "step_id": "empty",
+            "title": "No-result fallback",
+            "description": "Nonsense query still sells something.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_results": {
+          "type": "step",
+          "settings": {
+            "step_id": "results",
+            "title": "Search results page",
+            "description": "Full results page with the same filters.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "heading_layout": {
+          "type": "heading",
+          "settings": {
+            "title": "Layout & more"
+          }
+        },
+        "step_horizontal": {
+          "type": "step",
+          "settings": {
+            "step_id": "horizontal",
+            "title": "Horizontal filter bar",
+            "description": "Same filters, above the grid.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_drawer": {
+          "type": "step",
+          "settings": {
+            "step_id": "drawer",
+            "title": "Off-canvas drawer",
+            "description": "Filters slide in over the grid.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_mobile": {
+          "type": "step",
+          "settings": {
+            "step_id": "mobile",
+            "title": "Mobile filter drawer",
+            "description": "Switches the stage to a phone width.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_currency": {
+          "type": "step",
+          "settings": {
+            "step_id": "currency",
+            "title": "Multi-currency",
+            "description": "Switches the store currency; filters keep working.",
+            "action": "",
+            "store": "all"
+          }
+        },
+        "step_ymm": {
+          "type": "step",
+          "settings": {
+            "step_id": "ymm",
+            "title": "Year / Make / Model",
+            "description": "Loads the auto-parts store with a YMM search.",
+            "action": "",
+            "store": "all"
+          }
+        }
+      },
+      "block_order": [
+        "heading_filtering",
+        "step_tree",
+        "step_multi",
+        "step_merged",
+        "step_meta",
+        "step_price",
+        "step_rts",
+        "step_split",
+        "heading_search",
+        "step_zero",
+        "step_instant",
+        "step_semantic",
+        "step_typo",
+        "step_syn",
+        "step_merch",
+        "step_empty",
+        "step_results",
+        "heading_layout",
+        "step_horizontal",
+        "step_drawer",
+        "step_mobile",
+        "step_currency",
+        "step_ymm"
+      ]
+    }
+  },
+  "order": ["demo_guide"]
+}
