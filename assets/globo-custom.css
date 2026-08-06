@@ -78,9 +78,7 @@
   display: none;
   width: 100%;
   height: 100%;
-  padding: 0;
   background: rgba(8, 10, 12, .45);
-  border: 0;
   cursor: default;
 }
 

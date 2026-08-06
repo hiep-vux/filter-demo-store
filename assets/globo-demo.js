@@ -59,7 +59,9 @@ class GloboDemoControls {
 
   /** @param {MouseEvent} event */
   handleClick(event) {
-    const target = event.target instanceof Element ? event.target.closest('button') : null;
+    const target = event.target instanceof Element
+      ? event.target.closest('[data-demo-control], [data-demo-action], .demo-card[data-demo-step]')
+      : null;
     if (!target) return;
 
     const control = target.dataset.demoControl;
