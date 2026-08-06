@@ -52,6 +52,7 @@ button.gl-d-close-btn {
   inset: 70px 0px 0px;
   z-index: 3;
   background: rgba(20, 20, 20, 0.28) !important;
+  animation: 0.18s ease 0s 1 normal both running omFade;
 }
 .gl-search-open .gl-search-backdrop {
   display: block;
