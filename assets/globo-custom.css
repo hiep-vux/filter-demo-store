@@ -500,3 +500,27 @@ span.header-logo__image-container.header-logo__image-container--original {
     border-radius: 999px;
     padding: 15px 26px;
 }
+/* Firefox */
+.demo-sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #4b555e #14171a;
+}
+
+/* Chrome, Edge và Safari */
+.demo-sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.demo-sidebar::-webkit-scrollbar-track {
+  background: #14171a;
+}
+
+.demo-sidebar::-webkit-scrollbar-thumb {
+  background: #4b555e;
+  border: 2px solid #14171a;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+.demo-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #687580;
