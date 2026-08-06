@@ -132,6 +132,10 @@ class GloboDemoControls {
 
   readPersistedState() {
     try {
+      if (window.__globoDemoInitialState && typeof window.__globoDemoInitialState === 'object') {
+        return window.__globoDemoInitialState;
+      }
+
       const storedState = window.sessionStorage.getItem(DEMO_SESSION_KEY);
       const parsedState = storedState ? JSON.parse(storedState) : {};
       return parsedState && typeof parsedState === 'object' ? parsedState : {};
@@ -142,12 +146,15 @@ class GloboDemoControls {
 
   persistState() {
     try {
+      const persistedState = {
+        device: this.state.device,
+        doneSteps: Array.from(this.doneSteps),
+      };
+
+      window.__globoDemoInitialState = persistedState;
       window.sessionStorage.setItem(
         DEMO_SESSION_KEY,
-        JSON.stringify({
-          device: this.state.device,
-          doneSteps: Array.from(this.doneSteps),
-        })
+        JSON.stringify(persistedState)
       );
     } catch (error) {
       // sessionStorage may be unavailable in privacy-restricted browsers.

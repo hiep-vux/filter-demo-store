@@ -72,6 +72,9 @@ html:has(#globo-demo-page) body::-webkit-scrollbar-thumb:hover{
 .globo-page_content.page-wrapper[mode="mobile"]{
     max-width: 430px;
 }
+html[data-demo-device="mobile"] .globo-page_content.page-wrapper {
+    max-width: 430px;
+}
 
 /* css demo-sidebar */
 .demo-guide-pill {

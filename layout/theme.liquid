@@ -6,6 +6,25 @@
   lang="{{ request.locale.iso_code }}"
 >
   <head> 
+    <script>
+      (() => {
+        const fallbackState = { device: 'desktop', doneSteps: [] };
+
+        try {
+          const storedState = JSON.parse(sessionStorage.getItem('globo-demo:session-state') || '{}');
+          const initialState = {
+            device: storedState.device === 'mobile' ? 'mobile' : 'desktop',
+            doneSteps: Array.isArray(storedState.doneSteps) ? storedState.doneSteps : [],
+          };
+
+          window.__globoDemoInitialState = initialState;
+          document.documentElement.dataset.demoDevice = initialState.device;
+        } catch (error) {
+          window.__globoDemoInitialState = fallbackState;
+          document.documentElement.dataset.demoDevice = fallbackState.device;
+        }
+      })();
+    </script>
   
     {%- if settings.favicon != blank -%}
       <link
@@ -59,10 +78,67 @@
   
    <div id="globo-demo-page">
     {% render 'demo-toolbar' %}
+    <script>
+      (() => {
+        const root = document.getElementById('globo-demo-page');
+        const toolbar = root?.querySelector('[data-demo-toolbar]');
+        const device = window.__globoDemoInitialState?.device === 'mobile' ? 'mobile' : 'desktop';
+
+        if (!root || !toolbar) return;
+        root.dataset.demoDevice = device;
+
+        toolbar.querySelectorAll('[data-demo-control="device"]').forEach((button) => {
+          const isActive = button.dataset.demoValue === device;
+          button.classList.toggle('demo-segment__button--active', isActive);
+          button.setAttribute('aria-pressed', String(isActive));
+        });
+      })();
+    </script>
     <div class="globo-page_body">
       {% render 'demo-sidebar' %}
+      <script>
+        (() => {
+          const root = document.getElementById('globo-demo-page');
+          const sidebar = document.getElementById('globo-aside_demo');
+          const cards = Array.from(sidebar?.querySelectorAll('.demo-card[data-demo-step]') || []);
+          const storedSteps = window.__globoDemoInitialState?.doneSteps;
+          const doneSteps = new Set(Array.isArray(storedSteps) ? storedSteps : []);
+          let completed = 0;
+
+          cards.forEach((card) => {
+            const isDone = doneSteps.has(card.dataset.demoStep);
+            if (isDone) completed += 1;
+
+            card.classList.toggle('demo-card--checked', isDone);
+            card.toggleAttribute('data-demo-done', isDone);
+            card.setAttribute('aria-pressed', String(isDone));
+
+            const icon = card.querySelector('.demo-card__icon .sc-interp');
+            if (icon) icon.textContent = isDone ? '✓' : '';
+          });
+
+          const total = cards.length;
+          const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+          const progress = sidebar?.querySelector('[data-demo-progress]');
+          const fill = progress?.querySelector('.demo-progress__fill');
+          const text = sidebar?.querySelector('.demo-progress__text');
+          const pillCount = root?.querySelector('[data-demo-guide-pill-count]');
+
+          progress?.setAttribute('aria-valuemax', String(total));
+          progress?.setAttribute('aria-valuenow', String(completed));
+          if (fill) fill.style.width = `${percent}%`;
+          if (text) text.textContent = `${completed} / ${total}`;
+          if (pillCount) pillCount.textContent = `${completed}/${total}`;
+        })();
+      </script>
       <div class="globo-page-wrapper">
         <div class="globo-page_content page-wrapper ">
+          <script>
+            document.currentScript.parentElement.setAttribute(
+              'mode',
+              window.__globoDemoInitialState?.device === 'mobile' ? 'mobile' : 'desktop'
+            );
+          </script>
         
               <div id="header-group">
                 {% sections 'header-group' %}
