@@ -11,7 +11,6 @@
   "current": {
     "logo_height": 36,
     "logo_height_mobile": 28,
-    "sf_background": "#171717",
     "page_text_color": "#171717",
     "type_body_font": "assistant_n4",
     "type_subheading_font": "assistant_n4",
@@ -43,7 +42,7 @@
     "type_font_h6": "subheading",
     "type_size_h6": "12",
     "type_line_height_h6": "display-loose",
-    "page_background_color": "{{ settings.color_palette.background }}",
+    "page_background_color": "#171717",
     "page_width": "narrow",
     "page_transition_enabled": false,
     "transition_to_main_product": false,
@@ -103,6 +102,7 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
+    "sf_background": "#171717",
     "content_for_index": [],
     "blocks": {
       "5059203847231188605": {
