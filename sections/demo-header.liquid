@@ -119,7 +119,7 @@
                 value="{{ country.iso_code }}"
                 {% if country.iso_code == localization.country.iso_code %}selected{% endif %}
               >
-                {{ country.currency.iso_code }} · {{ country.name }}
+               {{ country.name }}
               </option>
             {%- endfor -%}
           </select>
