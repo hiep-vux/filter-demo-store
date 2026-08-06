@@ -143,12 +143,15 @@ html:has(#globo-demo-page) body::-webkit-scrollbar-thumb:hover{
   .demo-sidebar {
     display: none;
     position: fixed;
-    top: 56px;
+    top: 0;
     right: 0;
     bottom: 0;
     z-index: 90;
     width: min(330px, 100vw);
-    max-height: calc(100vh - 56px);
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
     box-shadow: 0 0 60px rgba(0, 0, 0, .55);
   }
 
