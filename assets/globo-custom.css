@@ -75,17 +75,19 @@ html:has(#globo-demo-page) body::-webkit-scrollbar{
   width: 8px;
 }
 
-.demo-sidebar::-webkit-scrollbar-track,
 #gl-search-listbox::-webkit-scrollbar-track{
-    background: #fff;
+    background: #fff !important;
 }
+.demo-sidebar::-webkit-scrollbar-track,
 html:has(#globo-demo-page)::-webkit-scrollbar-track,
 html:has(#globo-demo-page) body::-webkit-scrollbar-track{
   background: #14171a;
 }
 
+#gl-search-listbox::-webkit-scrollbar-thumb{
+
+}
 .demo-sidebar::-webkit-scrollbar-thumb,
-#gl-search-listbox::-webkit-scrollbar-thumb,
 html:has(#globo-demo-page)::-webkit-scrollbar-thumb,
 html:has(#globo-demo-page) body::-webkit-scrollbar-thumb{
   background: #4b555e;
