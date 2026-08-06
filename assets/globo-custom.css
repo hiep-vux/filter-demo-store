@@ -55,7 +55,7 @@ html:has(#globo-demo-page) body::-webkit-scrollbar-thumb:hover{
     flex: 1 1 0%;
     min-width: 0px;
     padding: 22px 22px 70px;
-    background: {{ settings.sf_background }};
+    background: {{ settings.page_background_color }};
 }
 
 .globo-page_content.page-wrapper {
