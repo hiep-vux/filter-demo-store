@@ -1,4 +1,26 @@
-<aside id="globo-aside_demo" class="demo-sidebar">
+<button
+  type="button"
+  class="demo-guide-pill"
+  data-demo-guide-pill
+  data-demo-action="open-guide"
+  aria-controls="globo-aside_demo"
+  aria-expanded="false"
+  hidden
+>
+  <span class="demo-guide-pill__dot" aria-hidden="true"></span>
+  <span>Try it yourself · <span data-demo-guide-pill-count>0/20</span></span>
+</button>
+
+<button
+  type="button"
+  class="demo-guide-scrim"
+  data-demo-guide-scrim
+  data-demo-action="close-guide"
+  aria-label="Close guide"
+  hidden
+></button>
+
+<aside id="globo-aside_demo" class="demo-sidebar" aria-label="Try it yourself">
   <div class="demo-sidebar__header">
     <h2 class="demo-sidebar__title">Try it yourself</h2>
     <button type="button" class="demo-sidebar__close" data-demo-action="close-guide" aria-label="Close guide">&times;</button>

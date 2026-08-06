@@ -43,15 +43,13 @@ class GloboDemoControls {
   init() {
     if (!this.root) return;
 
-    this.toolbar.addEventListener('click', this.handleClick);
-    this.sidebar?.addEventListener('click', this.handleClick);
+    this.root.addEventListener('click', this.handleClick);
     this.mobileBreakpoint.addEventListener('change', this.handleViewportChange);
     this.render({ emit: false });
   }
 
   destroy() {
-    this.toolbar.removeEventListener('click', this.handleClick);
-    this.sidebar?.removeEventListener('click', this.handleClick);
+    this.root?.removeEventListener('click', this.handleClick);
     this.mobileBreakpoint.removeEventListener('change', this.handleViewportChange);
   }
 
@@ -82,6 +80,9 @@ class GloboDemoControls {
         break;
       case 'close-guide':
         this.setState({ guideOpen: false });
+        break;
+      case 'open-guide':
+        this.setState({ guideOpen: true });
         break;
     }
   }
@@ -181,6 +182,19 @@ class GloboDemoControls {
 
     const label = this.toolbar.querySelector('[data-demo-guide-label]');
     if (label) label.textContent = isOpen ? 'Hide guide' : 'Show guide';
+
+    const pill = this.root.querySelector('[data-demo-guide-pill]');
+    if (pill) {
+      pill.hidden = isOpen;
+      pill.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    const scrim = this.root.querySelector('[data-demo-guide-scrim]');
+    if (scrim) scrim.hidden = !isOpen;
+
+    const progress = this.sidebar?.querySelector('.demo-progress__text');
+    const pillCount = pill?.querySelector('[data-demo-guide-pill-count]');
+    if (pillCount && progress) pillCount.textContent = progress.textContent.replace(/\s+/g, '');
   }
 
   updateStage(device) {
