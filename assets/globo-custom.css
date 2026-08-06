@@ -66,6 +66,7 @@ button.gl-d-close-btn {
     height: 35px;
     line-height: 35px;
     width: 35px;
+    padding: 0 !important;
 }
 
 /*css scroll bar Firefox */
