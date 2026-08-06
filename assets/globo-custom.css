@@ -813,3 +813,9 @@ span.header-logo__image-container.header-logo__image-container--original {
     border-radius: 999px;
     padding: 15px 26px;
 }
+
+.demo-store-footer__heading,
+.demo-store-footer__link,
+.demo-store-footer__text {
+    line-height: 1.25;
+}
