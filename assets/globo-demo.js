@@ -209,9 +209,10 @@ class GloboDemoControls {
   }
 
   reset() {
+    const { guideOpen } = this.state;
     this.clearActiveFilters();
     this.resetGuideProgress();
-    this.state = { ...this.defaults };
+    this.state = { ...this.defaults, guideOpen };
     this.render({ emit: true, reset: true });
   }
 
