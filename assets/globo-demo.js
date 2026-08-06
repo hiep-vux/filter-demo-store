@@ -186,7 +186,7 @@ class GloboDemoControls {
   updateStage(device) {
     if (!this.stage) return;
     this.stage.setAttribute('mode', device);
-    this.stage.style.removeProperty('max-width');
+    // this.stage.style.removeProperty('max-width');
   }
 
   updateStore(store) {
