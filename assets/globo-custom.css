@@ -60,14 +60,13 @@ button.gl-d-close-btn {
 
 /*css scroll bar Firefox */
 .demo-sidebar,
-#gl-search-listbox,
 html:has(#globo-demo-page),
 html:has(#globo-demo-page) body{
   scrollbar-width: thin;
   scrollbar-color: #4b555e #14171a;
 }
 
-#gl-search-listbox,{
+#gl-search-listbox{
   scrollbar-width: thin;
   scrollbar-color: #fff #fff;
 }
