@@ -57,6 +57,16 @@
     ]
   },
   {
+    "name": "SF BG color",
+    "settings": [
+      {
+      "type": "color",
+      "id": "sf_background",
+      "label": "Background color",
+      }
+    ]
+  },
+  {
     "name": "t:names.colors",
     "settings": [
       {
