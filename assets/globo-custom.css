@@ -1,3 +1,60 @@
+html #glFilter-search-popup{
+  opacity:0;
+}
+.globo-page_content #glFilter-search-popup{
+  opacity: 1;
+}
+#glFilter-search-popup{
+  position: absolute;
+  inset: 68px 0px auto;
+  z-index: 3;
+}
+.gl-filter-search-fullscreen .gl-fullscreen-layer {
+    background: #fff;
+}
+.gl-fullscreen-layer .gl-fullscreen-header {
+  display: flex;
+  gap: 14px;
+  padding: 20px 28px;
+  border-bottom: 1px solid rgb(242, 242, 240);
+}
+input#gl-d-searchbox-input {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: rgb(23, 23, 23);
+}
+button.gl-d-close-btn {
+  flex: 0 0 auto !important;
+  width: 34px !important;
+  height: 34px !important;
+  border: 1px solid rgb(227, 227, 225) !important;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  font-size: 15px;
+  color: rgb(109, 109, 104) !important;
+  padding: 9px !important;
+}
+.gl-filter-search-fullscreen .gl-fullscreen-layer .gl-fullscreen-initial-content{
+  max-height: 460px;
+  overflow: auto;
+}
+.gl-search-backdrop{
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  transition: opacity .3s cubic-bezier(.25, .46, .45, .94);
+  inset: 70px 0px 0px;
+  z-index: 3;
+  background: rgba(20, 20, 20, 0.28) !important;
+}
+.gl-search-open .gl-search-backdrop {
+  display: block;
+}
+
 /*css scroll bar Firefox */
 .demo-sidebar,
 html:has(#globo-demo-page),
