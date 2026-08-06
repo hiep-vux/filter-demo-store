@@ -320,7 +320,9 @@
                 {{ content_for_layout }}
               </main>
 
-              
+              <footer>
+                {% sections 'footer-group' %}
+              </footer>
               {% render 'cart-drawer', render_wrapper: true %}
                 {% render 'theme-drawer' %}
 
@@ -334,7 +336,4 @@
      </div>
     </div>
   </body>
-  <footer>
-    {% sections 'footer-group' %}
-  </footer>
 </html>
