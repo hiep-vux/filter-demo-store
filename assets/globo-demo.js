@@ -338,6 +338,7 @@ class GloboDemoControls {
 
   updateStage(device) {
     if (!this.stage) return;
+    document.documentElement.dataset.demoDevice = device;
     this.stage.setAttribute('mode', device);
     // this.stage.style.removeProperty('max-width');
   }
