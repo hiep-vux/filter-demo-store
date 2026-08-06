@@ -35,15 +35,19 @@ html:has(#globo-demo-page) body::-webkit-scrollbar-thumb:hover{
 }
 
 @media (min-width: 990px) {
+  html:has(#globo-demo-page),
   html:has(#globo-demo-page) body {
-        overflow-y: auto;
-    }
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+  }
 }
 #globo-demo-page *{
     font-family: Assistant, -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .globo-page_content.page-wrapper {
-        height: 100% !important;
+    height: auto !important;
+    min-height: 100dvh;
 }
 .globo-page_body {
     display: flex;
