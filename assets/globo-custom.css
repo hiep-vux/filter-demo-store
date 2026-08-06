@@ -75,9 +75,6 @@ html:has(#globo-demo-page) body::-webkit-scrollbar{
   width: 8px;
 }
 
-#gl-search-listbox::-webkit-scrollbar-track{
-    background: #fff !important;
-}
 .demo-sidebar::-webkit-scrollbar-track,
 html:has(#globo-demo-page)::-webkit-scrollbar-track,
 html:has(#globo-demo-page) body::-webkit-scrollbar-track{
@@ -103,6 +100,9 @@ html:has(#globo-demo-page) body::-webkit-scrollbar-thumb:hover{
   background: #687580;
 }
 
+#gl-search-listbox::-webkit-scrollbar-track{
+    background: #fff !important;
+}
 @media (min-width: 990px) {
   html:has(#globo-demo-page) body {
       overflow-y: auto;
