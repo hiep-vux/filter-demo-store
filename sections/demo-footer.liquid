@@ -2,8 +2,13 @@
   assign footer_logo = section.settings.logo
   assign product_menu = section.settings.product_menu
   assign bottom_menu = section.settings.bottom_menu
+  assign button_url = section.settings.button_url
   assign demo_items = section.settings.demo_items | newline_to_br | split: '<br />'
   assign custom_product_links = 0
+
+  if button_url == blank
+    assign button_url = 'https://apps.shopify.com/product-filter-and-search'
+  endif
 
   for block in section.blocks
     if block.type == 'link' and block.settings.label != blank and block.settings.url != blank
@@ -122,10 +127,10 @@
         <div class="demo-store-footer__description rte">{{ section.settings.cta_text }}</div>
       {%- endif -%}
 
-      {%- if section.settings.button_label != blank and section.settings.button_url != blank -%}
+      {%- if section.settings.button_label != blank -%}
         <a
           class="demo-store-footer__button"
-          href="{{ section.settings.button_url }}"
+          href="{{ button_url }}"
           {% if section.settings.open_button_new_tab %}target="_blank" rel="noopener"{% endif %}
         >
           {{ section.settings.button_label | escape }}
@@ -480,7 +485,7 @@
       "type": "url",
       "id": "button_url",
       "label": "Button URL",
-      "default": "https://apps.shopify.com/product-filter-and-search"
+      "info": "The Globo app listing is used when no URL is selected."
     },
     {
       "type": "checkbox",
