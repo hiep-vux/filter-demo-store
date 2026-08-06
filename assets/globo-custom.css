@@ -269,6 +269,16 @@
     background: #20262b;
 }
 
+.demo-card.demo-card--checked {
+    border-color: #2f7d52;
+    background: #18231d;
+}
+
+.demo-card.demo-card--checked .demo-card__icon {
+    border-color: #2f7d52;
+    background: #2f7d52;
+}
+
 .demo-card__icon {
     flex: 0 0 auto;
     width: 17px;

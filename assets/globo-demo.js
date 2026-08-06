@@ -24,6 +24,9 @@ class GloboDemoControls {
     this.sidebar = this.root?.querySelector('#globo-aside_demo');
     this.mobileBreakpoint = window.matchMedia('(max-width: 1179px)');
     this.isFilterResultsPage = isFilterResultsPage(window.location.pathname);
+    this.guideCards = Array.from(this.root?.querySelectorAll('.demo-card[data-demo-step]') || []);
+    this.doneSteps = new Set();
+    this.stepActions = new Map();
 
     this.defaults = {
       layout: toolbar.dataset.defaultLayout || 'sidebar',
@@ -45,6 +48,7 @@ class GloboDemoControls {
 
     this.root.addEventListener('click', this.handleClick);
     this.mobileBreakpoint.addEventListener('change', this.handleViewportChange);
+    this.updateGuideProgress();
     this.render({ emit: false });
   }
 
@@ -60,6 +64,11 @@ class GloboDemoControls {
 
     const control = target.dataset.demoControl;
     const value = target.dataset.demoValue;
+
+    if (target.matches('.demo-card[data-demo-step]')) {
+      this.completeGuideStep(target);
+      return;
+    }
 
     if (control && value) {
       if (control === 'layout') {
@@ -100,6 +109,76 @@ class GloboDemoControls {
     this.render({ previous, emit: true });
   }
 
+  registerStepAction(name, handler) {
+    if (!name || typeof handler !== 'function') return;
+    this.stepActions.set(name, handler);
+  }
+
+  unregisterStepAction(name) {
+    this.stepActions.delete(name);
+  }
+
+  completeGuideStep(card) {
+    const stepId = card.dataset.demoStep;
+    if (!stepId) return;
+
+    const firstCompletion = !this.doneSteps.has(stepId);
+    this.doneSteps.add(stepId);
+
+    card.classList.add('demo-card--checked');
+    card.dataset.demoDone = 'true';
+    card.setAttribute('aria-pressed', 'true');
+
+    const icon = card.querySelector('.demo-card__icon .sc-interp');
+    if (icon) icon.textContent = '✓';
+
+    this.updateGuideProgress();
+
+    const action = card.dataset.demoStepAction?.trim() || '';
+    const detail = {
+      id: stepId,
+      action,
+      card,
+      firstCompletion,
+      completedCount: this.doneSteps.size,
+      totalCount: this.guideCards.length,
+    };
+
+    this.root.dispatchEvent(new CustomEvent('globo-demo:step', { bubbles: true, detail }));
+
+    const handler = this.stepActions.get(action);
+    if (action && handler) handler(detail, this);
+  }
+
+  updateGuideProgress() {
+    const completed = this.doneSteps.size;
+    const total = this.guideCards.length;
+    const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+    const progress = this.sidebar?.querySelector('[data-demo-progress]');
+    const fill = progress?.querySelector('.demo-progress__fill');
+    const text = this.sidebar?.querySelector('.demo-progress__text');
+    const pillCount = this.root.querySelector('[data-demo-guide-pill-count]');
+
+    progress?.setAttribute('aria-valuemax', String(total));
+    progress?.setAttribute('aria-valuenow', String(completed));
+    if (fill) fill.style.width = `${percent}%`;
+    if (text) text.textContent = `${completed} / ${total}`;
+    if (pillCount) pillCount.textContent = `${completed}/${total}`;
+  }
+
+  resetGuideProgress() {
+    this.doneSteps.clear();
+    this.guideCards.forEach((card) => {
+      card.classList.remove('demo-card--checked');
+      delete card.dataset.demoDone;
+      card.setAttribute('aria-pressed', 'false');
+
+      const icon = card.querySelector('.demo-card__icon .sc-interp');
+      if (icon) icon.textContent = '';
+    });
+    this.updateGuideProgress();
+  }
+
   getInitialLayout() {
     if (!this.isFilterResultsPage) return this.defaults.layout;
 
@@ -129,6 +208,7 @@ class GloboDemoControls {
 
   reset() {
     this.clearActiveFilters();
+    this.resetGuideProgress();
     this.state = { ...this.defaults };
     this.render({ emit: true, reset: true });
   }
