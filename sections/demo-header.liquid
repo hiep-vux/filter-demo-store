@@ -89,7 +89,7 @@
         <search-button class="demo-store-header__search demo-store-header__search--desktop">
           <button
             type="button"
-            class="demo-store-header__search-button globo-search-activator"
+            class="demo-store-header__search-button"
             {% comment %} on:click="#search-modal/showDialog" {% endcomment %}
             aria-label="{{ 'content.search_input_label' | t }}"
             aria-haspopup="dialog"
@@ -165,11 +165,12 @@
         <search-button class="demo-store-header__search demo-store-header__search--compact">
           <button
             type="button"
-            class="demo-store-header__search-button globo-search-activator"
+            class="demo-store-header__search-button"
             {% comment %} on:click="#search-modal/showDialog" {% endcomment %}
             aria-label="{{ 'content.search_input_label' | t }}"
             aria-haspopup="dialog"
           >
+            <input type="search"/>
             <span class="demo-store-header__search-icon" aria-hidden="true">
               {{- 'icon-search.svg' | inline_asset_content -}}
             </span>
@@ -381,6 +382,7 @@
   }
 
   .demo-store-header__search-button {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -398,6 +400,14 @@
     border-radius: 999px;
     cursor: pointer;
     transition: color .18s ease, border-color .18s ease;
+  }
+  .demo-store-header__search-button input[type="search"]{
+    opacity: 0;
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
   }
 
   .demo-store-header__search-button:hover {
