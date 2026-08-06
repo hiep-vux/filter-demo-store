@@ -67,6 +67,11 @@ html:has(#globo-demo-page) body{
   scrollbar-color: #4b555e #14171a;
 }
 
+#gl-search-listbox,{
+  scrollbar-width: thin;
+  scrollbar-color: #fff #fff;
+}
+
 /* Chrome, Edge và Safari */
 .demo-sidebar::-webkit-scrollbar,
 #gl-search-listbox::-webkit-scrollbar,
