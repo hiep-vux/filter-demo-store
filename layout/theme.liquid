@@ -4,6 +4,7 @@
     class="shopify-design-mode"
   {% endif %}
   lang="{{ request.locale.iso_code }}"
+  style="background:#000"
 >
   <head> 
     <script>
@@ -52,6 +53,56 @@
         }
       })();
     </script>
+    <style id="demo-critical-loading-style">
+      html[data-demo-loading="true"] body {
+        background: #000;
+      }
+
+      html[data-demo-loading="true"]:not([data-demo-skeleton-ready="true"]) body::before,
+      html[data-demo-loading="true"]:not([data-demo-skeleton-ready="true"]) body::after {
+        position: fixed;
+        content: '';
+        pointer-events: none;
+      }
+
+      html[data-demo-loading="true"]:not([data-demo-skeleton-ready="true"]) body::before {
+        inset: 0;
+        z-index: 2147483000;
+        background: linear-gradient(to bottom, #14171a 0 56px, #000 56px 100%);
+      }
+
+      html[data-demo-loading="true"]:not([data-demo-skeleton-ready="true"]) body::after {
+        top: 78px;
+        right: 352px;
+        bottom: 22px;
+        left: 22px;
+        z-index: 2147483001;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, transparent, rgba(255, 255, 255, .72), transparent) -100% 0 / 45% 100% no-repeat,
+          #f1f1ee;
+        border-radius: 16px;
+        animation: demo-critical-loading-shimmer 1.2s ease-in-out infinite;
+      }
+
+      @media screen and (max-width: 1179px) {
+        html[data-demo-loading="true"]:not([data-demo-skeleton-ready="true"]) body::after {
+          right: 22px;
+        }
+      }
+
+      @keyframes demo-critical-loading-shimmer {
+        to {
+          background-position: 200% 0, 0 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html[data-demo-loading="true"]:not([data-demo-skeleton-ready="true"]) body::after {
+          animation: none;
+        }
+      }
+    </style>
   
     {%- if settings.favicon != blank -%}
       <link
@@ -182,6 +233,9 @@
             );
           </script>
           {% render 'demo-storefront-skeleton' %}
+          <script>
+            document.documentElement.dataset.demoSkeletonReady = 'true';
+          </script>
         
               <div id="header-group">
                 {% sections 'header-group' %}
