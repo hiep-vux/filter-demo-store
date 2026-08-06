@@ -1,0 +1,385 @@
+<footer data-dc-tpl="412" class="demo-footer_section">
+    <div data-dc-tpl="413" class="demo-footer_section__top">
+
+        <div data-dc-tpl="414" class="demo-footer_section__brand">
+            <div data-dc-tpl="415" class="demo-footer_section__logo-wrap">
+                <img
+                    data-dc-tpl="416"
+                    src="{{ 'app_icon.webp' | asset_url }}"
+                    alt=""
+                    class="demo-footer_section__logo"
+                >
+                <span data-dc-tpl="417" class="demo-footer_section__title">
+                    Smart Product Filter &amp; Search
+                </span>
+            </div>
+
+            <p data-dc-tpl="418" class="demo-footer_section__description">
+                A stock Horizon theme running Smart Product Filter &amp; Search. Every filter,
+                swatch and suggestion on this page is served by the app — no theme code edits.
+            </p>
+
+            <div data-dc-tpl="419" class="demo-footer_section__status">
+                <span data-dc-tpl="420" class="demo-footer_section__status-dot"></span>
+                <span data-dc-tpl="421" class="demo-footer_section__status-text">
+                    Sandbox data · resets nightly
+                </span>
+            </div>
+        </div>
+
+        <div data-dc-tpl="422" class="demo-footer_section__column">
+            <span data-dc-tpl="423" class="demo-footer_section__heading">Product</span>
+
+            <a data-dc-tpl="424" href="https://apps.shopify.com/product-filter-and-search" target="_blank" class="scpf demo-footer_section__link">
+                App listing
+            </a>
+
+            <a data-dc-tpl="425" href="https://docs.globo.io/filter" target="_blank" class="scpf demo-footer_section__link">
+                User guide
+            </a>
+
+            <a data-dc-tpl="426" href="https://globo.io/pricing" target="_blank" class="scpf demo-footer_section__link">
+                Pricing
+            </a>
+
+            <a data-dc-tpl="427" href="https://globo.io/changelog" target="_blank" class="scpf demo-footer_section__link">
+                Changelog
+            </a>
+        </div>
+
+        <div data-dc-tpl="428" class="demo-footer_section__column">
+            <span data-dc-tpl="429" class="demo-footer_section__heading">In this demo</span>
+
+            <span data-dc-tpl="430" class="demo-footer_section__text">Nested filter tree</span>
+            <span data-dc-tpl="431" class="demo-footer_section__text">AI semantic search</span>
+            <span data-dc-tpl="432" class="demo-footer_section__text">Year / Make / Model</span>
+            <span data-dc-tpl="433" class="demo-footer_section__text">Variant swatches</span>
+        </div>
+
+        <div data-dc-tpl="434" class="demo-footer_section__column demo-footer_section__column--cta">
+            <span data-dc-tpl="435" class="demo-footer_section__heading">
+                Try it on your store
+            </span>
+
+            <p data-dc-tpl="436" class="demo-footer_section__description">
+                Install free, filter your own catalog in minutes.
+            </p>
+
+            <a
+                data-dc-tpl="437"
+                href="https://apps.shopify.com/product-filter-and-search"
+                target="_blank"
+                class="scpa demo-footer_section__button"
+            >
+                Install the app
+            </a>
+        </div>
+
+    </div>
+
+    <div data-dc-tpl="438" class="demo-footer_section__bottom">
+        <span data-dc-tpl="439" class="demo-footer_section__copyright">
+            © 2026 Globo.io · Demo storefront, not a real shop
+        </span>
+
+        <div data-dc-tpl="440" class="demo-footer_section__bottom-links">
+            <a data-dc-tpl="441" href="https://globo.io/privacy" target="_blank" class="scpg demo-footer_section__bottom-link">
+                Privacy
+            </a>
+
+            <a data-dc-tpl="442" href="https://globo.io/terms" target="_blank" class="scpg demo-footer_section__bottom-link">
+                Terms
+            </a>
+
+            <a data-dc-tpl="443" href="https://globo.io/support" target="_blank" class="scpg demo-footer_section__bottom-link">
+                Support
+            </a>
+        </div>
+    </div>
+</footer>
+
+{% style %}
+  .demo-footer_section {
+    padding: 64px 40px 0;
+    color: #e6e5e1;
+    background: #171717;
+}
+
+.demo-footer_section__top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+    gap: 48px 40px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-bottom: 56px;
+}
+
+.demo-footer_section__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 340px;
+}
+
+.demo-footer_section__logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.demo-footer_section__logo {
+    display: block;
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+}
+
+.demo-footer_section__title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+}
+
+.demo-footer_section__description {
+    margin: 0;
+    color: #9a9a95;
+    font-size: 15px;
+    line-height: 1.65;
+    text-wrap: pretty;
+}
+
+.demo-footer_section__status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2px;
+}
+
+.demo-footer_section__status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4caf7d;
+}
+
+.demo-footer_section__status-text {
+    color: #9a9a95;
+    font-size: 13.5px;
+}
+
+.demo-footer_section__column {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.demo-footer_section__column--cta {
+    gap: 16px;
+    max-width: 280px;
+}
+
+.demo-footer_section__heading {
+    color: #94948f;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.demo-footer_section__link {
+    color: #e6e5e1;
+    font-size: 15px;
+    text-decoration: none;
+    transition: opacity .2s;
+}
+
+.demo-footer_section__link:hover {
+    opacity: .75;
+}
+
+.demo-footer_section__text {
+    color: #9a9a95;
+    font-size: 15px;
+}
+
+.demo-footer_section__button {
+    align-self: flex-start;
+    padding: 13px 24px;
+    border-radius: 999px;
+    background: #fff;
+    color: #171717;
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.demo-footer_section__button:hover {
+    transform: translateY(-1px);
+}
+
+.demo-footer_section__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 24px 0 34px;
+    border-top: 1px solid #2a2a27;
+}
+
+.demo-footer_section__copyright {
+    color: #94948f;
+    font-size: 13.5px;
+}
+
+.demo-footer_section__bottom-links {
+    display: flex;
+    gap: 26px;
+}
+
+.demo-footer_section__bottom-link {
+    color: #9a9a95;
+    font-size: 13.5px;
+    text-decoration: none;
+    transition: opacity .2s;
+}
+
+.demo-footer_section__bottom-link:hover {
+    opacity: .75;
+}
+{% endstyle %}
+
+{% comment %} <footer class="demo-footer_section">
+  <div class="footer__text">
+    {{ section.settings.footer_text }}
+  </div>
+
+  {% if section.blocks.size > 0 %}
+    <div class="footer__links">
+      {% for block in section.blocks %}
+        {% if block.settings.label != blank %}
+          <a
+            href="{{ block.settings.url }}"
+            target="{% if block.settings.open_new_tab %}_blank{% else %}_self{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.label }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</footer> {% endcomment %}
+
+{% comment %} <style>
+.demo-footer_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 32px 28px;
+  background: #171717;
+}
+
+.footer__text {
+  font-size: 13px;
+  color: #8a8a86;
+  line-height: 1.5;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer__links a {
+  color: #e6e5e1;
+  font-size: 13px;
+  text-decoration: none;
+  transition: opacity .2s ease;
+}
+
+.footer__links a:hover {
+  opacity: .7;
+}
+
+@media (max-width: 767px) {
+  .demo-footer_section {
+    padding: 24px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__links {
+    gap: 16px;
+  }
+}
+</style> {% endcomment %}
+
+{% comment %} {% schema %}
+{
+  "name": "Demo Footer",
+  "tag": "section",
+  "class": "section-demo-footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "footer_text",
+      "label": "Footer text",
+      "default": "Demo storefront for Smart Product Filter & Search by Globo.io · Horizon theme"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link",
+      "name": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Link text",
+          "default": "User guide"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_new_tab",
+          "label": "Open in new tab",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Demo Footer",
+      "blocks": [
+        {
+          "type": "link",
+          "settings": {
+            "label": "User guide"
+          }
+        },
+        {
+          "type": "link",
+          "settings": {
+            "label": "App listing"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %} {% endcomment %}
