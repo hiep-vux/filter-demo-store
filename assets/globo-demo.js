@@ -1,4 +1,5 @@
 const ACTIVE_CLASS = 'demo-segment__button--active';
+const DEMO_SESSION_KEY = 'globo-demo:session-state';
 const LAYOUT_QUERY_PARAM = 'layout_filter';
 const LAYOUT_QUERY_VALUES = {
   sidebar: '1',
@@ -25,7 +26,12 @@ class GloboDemoControls {
     this.mobileBreakpoint = window.matchMedia('(max-width: 1179px)');
     this.isFilterResultsPage = isFilterResultsPage(window.location.pathname);
     this.guideCards = Array.from(this.root?.querySelectorAll('.demo-card[data-demo-step]') || []);
-    this.doneSteps = new Set();
+    const persistedState = this.readPersistedState();
+    const validStepIds = new Set(this.guideCards.map((card) => card.dataset.demoStep));
+    const persistedSteps = Array.isArray(persistedState.doneSteps) ? persistedState.doneSteps : [];
+    this.doneSteps = new Set(
+      persistedSteps.filter((stepId) => validStepIds.has(stepId))
+    );
     this.stepActions = new Map();
 
     this.defaults = {
@@ -38,6 +44,9 @@ class GloboDemoControls {
     this.state = {
       ...this.defaults,
       layout: this.getInitialLayout(),
+      device: ['desktop', 'mobile'].includes(persistedState.device)
+        ? persistedState.device
+        : this.defaults.device,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleViewportChange = this.handleViewportChange.bind(this);
@@ -48,6 +57,7 @@ class GloboDemoControls {
 
     this.root.addEventListener('click', this.handleClick);
     this.mobileBreakpoint.addEventListener('change', this.handleViewportChange);
+    this.restoreGuideProgress();
     this.updateGuideProgress();
     this.render({ emit: false });
   }
@@ -120,6 +130,42 @@ class GloboDemoControls {
     this.stepActions.delete(name);
   }
 
+  readPersistedState() {
+    try {
+      const storedState = window.sessionStorage.getItem(DEMO_SESSION_KEY);
+      const parsedState = storedState ? JSON.parse(storedState) : {};
+      return parsedState && typeof parsedState === 'object' ? parsedState : {};
+    } catch (error) {
+      return {};
+    }
+  }
+
+  persistState() {
+    try {
+      window.sessionStorage.setItem(
+        DEMO_SESSION_KEY,
+        JSON.stringify({
+          device: this.state.device,
+          doneSteps: Array.from(this.doneSteps),
+        })
+      );
+    } catch (error) {
+      // sessionStorage may be unavailable in privacy-restricted browsers.
+    }
+  }
+
+  restoreGuideProgress() {
+    this.guideCards.forEach((card) => {
+      const isDone = this.doneSteps.has(card.dataset.demoStep);
+      card.classList.toggle('demo-card--checked', isDone);
+      card.toggleAttribute('data-demo-done', isDone);
+      card.setAttribute('aria-pressed', String(isDone));
+
+      const icon = card.querySelector('.demo-card__icon .sc-interp');
+      if (icon) icon.textContent = isDone ? '✓' : '';
+    });
+  }
+
   completeGuideStep(card) {
     const stepId = card.dataset.demoStep;
     if (!stepId) return;
@@ -135,6 +181,7 @@ class GloboDemoControls {
     if (icon) icon.textContent = '✓';
 
     this.updateGuideProgress();
+    this.persistState();
 
     const action = card.dataset.demoStepAction?.trim() || '';
     const detail = {
@@ -205,6 +252,7 @@ class GloboDemoControls {
     }
 
     url.searchParams.set(LAYOUT_QUERY_PARAM, queryValue);
+    this.persistState();
     window.location.assign(url.toString());
   }
 
@@ -231,6 +279,7 @@ class GloboDemoControls {
     this.updateGuide(guideOpen);
     this.updateStage(device);
     this.updateStore(store);
+    this.persistState();
 
     if (options.emit) {
       this.root.dispatchEvent(
