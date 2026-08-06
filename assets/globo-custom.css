@@ -60,6 +60,7 @@ button.gl-d-close-btn {
 
 /*css scroll bar Firefox */
 .demo-sidebar,
+#gl-search-listbox,
 html:has(#globo-demo-page),
 html:has(#globo-demo-page) body{
   scrollbar-width: thin;
@@ -68,18 +69,21 @@ html:has(#globo-demo-page) body{
 
 /* Chrome, Edge và Safari */
 .demo-sidebar::-webkit-scrollbar,
+#gl-search-listbox::-webkit-scrollbar,
 html:has(#globo-demo-page)::-webkit-scrollbar,
 html:has(#globo-demo-page) body::-webkit-scrollbar{
   width: 8px;
 }
 
 .demo-sidebar::-webkit-scrollbar-track,
+#gl-search-listbox::-webkit-scrollbar-track,
 html:has(#globo-demo-page)::-webkit-scrollbar-track,
 html:has(#globo-demo-page) body::-webkit-scrollbar-track{
   background: #14171a;
 }
 
 .demo-sidebar::-webkit-scrollbar-thumb,
+#gl-search-listbox::-webkit-scrollbar-thumb,
 html:has(#globo-demo-page)::-webkit-scrollbar-thumb,
 html:has(#globo-demo-page) body::-webkit-scrollbar-thumb{
   background: #4b555e;
@@ -89,6 +93,7 @@ html:has(#globo-demo-page) body::-webkit-scrollbar-thumb{
 }
 
 .demo-sidebar::-webkit-scrollbar-thumb:hover,
+#gl-search-listbox::-webkit-scrollbar-thumb:hover,
 html:has(#globo-demo-page)::-webkit-scrollbar-thumb:hover,
 html:has(#globo-demo-page) body::-webkit-scrollbar-thumb:hover{
   background: #687580;
