@@ -58,7 +58,24 @@
             <img data-variants="" class="gflazyload spf-product-card__image spf-product-card__image-main" src="{{no_image}}" alt="{{product.title | escape}}">
             {% endif %}
         </a>
-                <div class="spf-product__swatchs_container">
+                </div>
+
+        <div class="spf-product__info">
+                
+                <div class="h4 spf-product-card__title">
+            <a translatable href="{{root_url}}{{ product.url }}{{variant_url}}">{{product.title}}</a>
+                    </div>
+                        <div class="spf-product-card__price-wrapper">
+            {%- if product_compare_at_price > product_price -%}
+            <span class="spf-product-card__oldprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_compare_at_price | money }}</span>
+            <span class="spf-product-card__saleprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_price | money }}</span>
+            {% else %}
+            <span class="spf-product-card__price{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_price | money }}</span>
+            {% endif %}
+        </div>
+
+
+          <div class="spf-product__swatchs_container">
           {%- for option in product.options -%}
             {%- assign optionIndex = 'option' | append: forloop.index -%}
             {%- assign optionIndexNumber = forloop.index -%}
@@ -89,21 +106,7 @@
             {%- endif -%}
           {%- endfor -%}
         </div>
-                </div>
 
-        <div class="spf-product__info">
-                
-                <div class="h4 spf-product-card__title">
-            <a translatable href="{{root_url}}{{ product.url }}{{variant_url}}">{{product.title}}</a>
-                    </div>
-                        <div class="spf-product-card__price-wrapper">
-            {%- if product_compare_at_price > product_price -%}
-            <span class="spf-product-card__oldprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_compare_at_price | money }}</span>
-            <span class="spf-product-card__saleprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_price | money }}</span>
-            {% else %}
-            <span class="spf-product-card__price{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_price | money }}</span>
-            {% endif %}
-        </div>
                 <form class="spf-product__form" action="{{ root_url }}/cart/add" method="post">
             <select name="id" class="spf-product__variants">
             {%- for variant in product.variants -%}
