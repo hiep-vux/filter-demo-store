@@ -933,7 +933,7 @@ span.header-logo__image-container.header-logo__image-container--original {
   display: none !important;
 }
 .gfqv-modal-content .gfqv-product-gallery {
-    margin-bottom: 0 important;
+    margin-bottom: 0 !important;
 }
 .gfqv-modal-content .gfqv-product-image {
     border-radius: 14px !important;
