@@ -68,8 +68,8 @@
                   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                     <div class="gfqv-product-card__price-wrapper">
                       {% if current_variant.compare_at_price > current_variant.price %}
-                      <span class="gfqv-product-card__oldprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ current_variant.compare_at_price | money }}</span>
                       <span class="gfqv-product-card__saleprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ current_variant.price | money }}</span>
+                       <span class="gfqv-product-card__oldprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ current_variant.compare_at_price | money }}</span>
                       {% else %}
                       <span class="gfqv-product-card__price{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ current_variant.price | money }}</span>
                       {% endif %}
