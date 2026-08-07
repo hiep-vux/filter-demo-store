@@ -957,6 +957,7 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
   font-size: 16px;
   line-height: 1;
   white-space: nowrap;
+  margin-bottom: 14px;
 }
 
 .gfqv-product-wrapper .spf-product-card__stars {
