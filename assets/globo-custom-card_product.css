@@ -182,6 +182,7 @@
   line-height: 1.25;
 }
 
+.spf-product-card .spf-product-card__price,
 .spf-product-card .spf-product-card__saleprice{
     font-size: 16.5px !important;
     color: #171717 !important;
