@@ -925,7 +925,6 @@ span.header-logo__image-container.header-logo__image-container--original {
 }
 
 /* App template quickview */
-
 #gfqv-modal .gfqv-modal-content .product {
     border-radius: 18px;
 }
@@ -933,6 +932,19 @@ span.header-logo__image-container.header-logo__image-container--original {
 .variations_button{
   display: none !important;
 }
+.gfqv-product-gallery {
+    margin-bottom: 0 important;
+}
+.gfqv-product-image {
+    border-radius: 14px !important;
+    overflow: hidden;
+}
+#gfqv-modal .owl-carousel .owl-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
 .gfqv-swatch>label {
     font-size: 13.5px !important;
     font-weight: 500 !important;
