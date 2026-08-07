@@ -974,6 +974,7 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
   font-weight: 500;
   min-height: 40px !important;
   min-width: 44px !important;
+  border-radius: 50%;
 }
 .gfqv-modal-content .gfqv-swatch-value.is-selected .gfqv-swatch-text {
     color: #fff !important;
