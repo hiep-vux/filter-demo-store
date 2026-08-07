@@ -923,4 +923,17 @@ span.header-logo__image-container.header-logo__image-container--original {
 .demo-store-footer__text {
     line-height: 1.25;
 }
+
+/* App template quickview */
+.gfqv-product-thumbnails,
+.variations_button{
+  display: none !important;
+}
+.size-medium .gfqv-product__swatch-outer:has(.gfqv-swatch-color),
+span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
+    border-radius: 50%;
+}
+
+
+
 @keyframes omFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
