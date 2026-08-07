@@ -925,6 +925,10 @@ span.header-logo__image-container.header-logo__image-container--original {
 }
 
 /* App template quickview */
+
+#gfqv-modal .gfqv-modal-content .product {
+    border-radius: 18px;
+}
 .gfqv-product-thumbnails,
 .variations_button{
   display: none !important;
