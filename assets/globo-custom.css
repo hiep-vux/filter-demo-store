@@ -954,7 +954,7 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
   display: flex;
   align-items: center;
   min-height: 24px;
-  font-size: 13.5px;
+  font-size: 16px;
   line-height: 1;
   white-space: nowrap;
 }
@@ -983,7 +983,8 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
 
 .gfqv-product-wrapper .spf-product-card__rating-value,
 .gfqv-product-wrapper .spf-product-card__review-count {
-  color: #999995;
+  color: #8a8a86;
+  font-size: 14.5px;
 }
 
 .gfqv-product-wrapper .spf-product-card__review-count {
