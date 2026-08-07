@@ -975,6 +975,9 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
   min-height: 40px !important;
   min-width: 44px !important;
 }
+.gfqv-modal-content .gfqv-swatch-value.is-selected .gfqv-swatch-text {
+    color: #fff !important;
+}
 .gfqv-product-wrapper .spf-product-card__rating {
   display: flex;
   align-items: center;
