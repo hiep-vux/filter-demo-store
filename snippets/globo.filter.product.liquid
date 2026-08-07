@@ -30,7 +30,7 @@
 {%- assign product_rating = 4.5 -%}
 {%- assign product_review_count = 123 -%}
 
-<div{% if showPageData %} data-page="{{page}}"{% endif %} class="spf-col-xl-4 spf-col-lg-4 spf-col-md-6 spf-col-sm-6 spf-col-6">
+<div{% if showPageData %} data-page="{{page}}"{% endif %} class="spf-col-xl-4 spf-col-lg-4 spf-col-md-6 spf-col-sm-6 spf-col-6 gpf-padding">
     <div class="spf-product-card spf-product-card__left spf-product-card__template-5{% unless product.available %} spf-soldout{% endunless %}">
         <div class="spf-product-card__inner">
         {%- unless product.available -%}
