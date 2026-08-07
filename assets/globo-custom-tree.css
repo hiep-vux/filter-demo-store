@@ -15,9 +15,8 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
 }
 
 .spf-has-filter.theme-store-id-2481.spf-layout-theme #gf-products {
-    display: grid;
+    display: flex !important;
     margin: 0;
-    grid-template-rows: max-content;
 }
 .spf-has-filter.theme-store-id-2481.spf-layout-app #gf-products {
     --product-grid-gap: 0;
