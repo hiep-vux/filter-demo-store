@@ -933,7 +933,15 @@ span.header-logo__image-container.header-logo__image-container--original {
 span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
     border-radius: 50%;
 }
-
+#gfqv-modal .gfqv-modal-content .gfqv-close-modal {
+    right: 14px !important;
+    top: 14px !important;
+    width: 32px !important;
+    height: 32px !important;
+    border: 0px !important;
+    border-radius: 50% !important;
+    background: #f2f1eeff !important;
+}
 
 
 @keyframes omFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
