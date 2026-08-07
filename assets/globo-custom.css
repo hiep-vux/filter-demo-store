@@ -1037,4 +1037,15 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
 #gfqv-modal .gfqv-modal-content .product .gfqv-close-modal:after {
     transform: translate(-50%, -50%) rotate(-45deg) !important;
 }
+#gfqv-btn {
+  padding: 14px !important;
+  border: 0px !important;
+  border-radius: 999px !important;
+  background: #171717 !important;
+  color: #fff !important;
+  font-size: 15.5px !important;
+  font-weight: 500;
+  line-height: 1.3 !important;
+  text-transform: none !important;
+}
 @keyframes omFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
