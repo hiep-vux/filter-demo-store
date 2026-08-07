@@ -144,6 +144,7 @@
       {%- render 'theme-editor' -%}
     {% endif %}
     {{ 'globo-custom.css' | asset_url | stylesheet_tag }}
+    {{ 'globo-custom-card_product.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'globo-demo.js' | asset_url }}" type="module" fetchpriority="low"></script>
     {{ content_for_header }}
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600&display=swap" rel="stylesheet">
