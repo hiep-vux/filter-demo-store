@@ -1,3 +1,5 @@
-.collection-wrapper facets-form-component{
+.collection-wrapper facets-form-component,
+#gf-controls-search-input,
+.sort-by.limit-by{
     display: none !important;
 }
