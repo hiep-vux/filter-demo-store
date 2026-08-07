@@ -60,7 +60,7 @@
                             <span class="spf-product-card__stars-filled" style="width: {{ rating_width }}%;">★★★★★</span>
                         </span>
                         <span class="spf-product-card__rating-value">{{ product_rating | round: 1 }}</span>
-                        <span class="spf-product-card__review-count">{{ product_review_count | default: 0 }} reviews{% if product_review_count > 1 %}s{% endif %}</span>
+                        <span class="spf-product-card__review-count">{{ product_review_count | default: 0 }} review{% if product_review_count > 1 %}s{% endif %}</span>
                         </div>
                     {%- endif -%}
 
