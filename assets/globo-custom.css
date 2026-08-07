@@ -949,6 +949,47 @@ ul.gfqv-swatch-values li {
 span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
     border-radius: 50%;
 }
+
+.gfqv-product-wrapper .spf-product-card__rating {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  font-size: 13.5px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.gfqv-product-wrapper .spf-product-card__stars {
+  position: relative;
+  display: inline-block;
+  margin-right: 9px;
+  color: #d8d8d5;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.gfqv-product-wrapper .spf-product-card__stars-empty,
+.gfqv-product-wrapper .spf-product-card__stars-filled {
+  display: block;
+}
+
+.gfqv-product-wrapper .spf-product-card__stars-filled {
+  position: absolute;
+  inset: 0 auto 0 0;
+  overflow: hidden;
+  color: #171717;
+  white-space: nowrap;
+}
+
+.gfqv-product-wrapper .spf-product-card__rating-value,
+.gfqv-product-wrapper .spf-product-card__review-count {
+  color: #999995;
+}
+
+.gfqv-product-wrapper .spf-product-card__review-count {
+  margin-left: 4px;
+}
+
 .size-medium .gfqv-product__swatch-outer {
     height: 32px !important;
     min-width: 32px !important;
