@@ -29,35 +29,7 @@
   background: #f1f1f1;
 }
 
-.spf-product-card .spf-product-card__image {
-  position: absolute;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center;
-  mix-blend-mode: multiply;
-}
 
-.spf-product-card .spf-product-card__image-hidden {
-  display: none !important;
-}
-
-.spf-product-card .spf-product-card__image-main {
-  z-index: 1;
-  opacity: 1;
-  transition: opacity 220ms ease;
-}
-
-.spf-product-card .spf-product-card__image-secondary {
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 220ms ease;
-}
-
-.spf-product-card:hover .spf-product-card__image-secondary {
-  opacity: 1;
-}
 
 .spf-product-card .spf-product__label {
   position: absolute;
