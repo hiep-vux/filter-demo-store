@@ -109,7 +109,7 @@
   flex: 1 1 auto;
   flex-direction: column;
   align-items: stretch;
-  padding: 18px 0 0 !important;
+  padding: 12px 0 0 !important;
   text-align: left;
 }
 
@@ -321,10 +321,6 @@
     opacity: 1;
     visibility: visible;
     transform: none;
-  }
-
-  .spf-product-card .spf-product__info {
-    padding-top: 12px !important;
   }
 
   .spf-product-card .spf-product-card__title {
