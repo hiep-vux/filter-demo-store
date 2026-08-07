@@ -932,6 +932,9 @@ span.header-logo__image-container.header-logo__image-container--original {
 .variations_button{
   display: none !important;
 }
+.gfqv-product-summary{
+  padding: 34px 32px 30px;
+}
 .gfqv-modal-content .gfqv-product-gallery {
     margin-bottom: 0 !important;
 }
