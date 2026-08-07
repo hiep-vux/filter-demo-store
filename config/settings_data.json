@@ -107,7 +107,7 @@
     "blocks": {
       "5059203847231188605": {
         "type": "shopify://apps/smart-filter-search/blocks/app-embed/5cc1944c-3014-4a2a-af40-7d65abc0ef73",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "productGridSelector": "",
           "useCustomQuickviewTemplate": false,
