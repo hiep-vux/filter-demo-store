@@ -1077,4 +1077,16 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
   line-height: 1.3 !important;
   text-transform: none !important;
 }
+
+.gfqv-product-card__oldprice, 
+.gfqv-product-card__price, 
+.gfqv-product-card__saleprice {
+    font-size: 21.5px !important;
+    color: #171717 !important;
+    font-weight: 400 !important;
+}
+.gfqv-product-card__oldprice{
+  font-size: 16px !important;
+  color: #a3a39f !important;
+}
 @keyframes omFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
