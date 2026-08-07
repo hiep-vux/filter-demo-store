@@ -10,29 +10,29 @@
 
 <button
   type="button"
-  class="demo-guide-pill"
+  class="gpf-demo-guide__trigger"
   data-demo-guide-pill
   data-demo-action="open-guide"
-  aria-controls="globo-aside_demo"
+  aria-controls="gpf-demo-guide"
   aria-expanded="false"
 >
-  <span class="demo-guide-pill__dot" aria-hidden="true"></span>
+  <span class="gpf-demo-guide__trigger-dot" aria-hidden="true"></span>
   <span>{{ pill_label | escape }} · <span data-demo-guide-pill-count>0/0</span></span>
 </button>
 
 <div
-  class="demo-guide-scrim"
+  class="gpf-demo-guide__backdrop"
   data-demo-guide-scrim
   data-demo-action="close-guide"
   aria-hidden="true"
 ></div>
 
-<aside id="globo-aside_demo" class="demo-sidebar" aria-label="{{ guide_title | escape }}">
-  <div class="demo-sidebar__header">
-    <h2 class="demo-sidebar__title">{{ guide_title | escape }}</h2>
+<aside id="gpf-demo-guide" class="gpf-demo-guide" aria-label="{{ guide_title | escape }}">
+  <div class="gpf-demo-guide__header">
+    <h2 class="gpf-demo-guide__title">{{ guide_title | escape }}</h2>
     <button
       type="button"
-      class="demo-sidebar__close"
+      class="gpf-demo-guide__close"
       data-demo-action="close-guide"
       aria-label="{{ section.settings.close_label | default: 'Close guide' | escape }}"
     >
@@ -41,13 +41,13 @@
   </div>
 
   {%- if section.settings.description != blank -%}
-    <div class="demo-sidebar__description rte">{{ section.settings.description }}</div>
+    <div class="gpf-demo-guide__description rte">{{ section.settings.description }}</div>
   {%- endif -%}
 
   {%- if section.settings.show_progress -%}
-    <div class="demo-progress">
+    <div class="gpf-demo-progress">
       <div
-        class="demo-progress__bar"
+        class="gpf-demo-progress__bar"
         data-demo-progress
         role="progressbar"
         aria-label="{{ section.settings.progress_label | default: 'Guide progress' | escape }}"
@@ -55,18 +55,18 @@
         aria-valuemax="0"
         aria-valuenow="0"
       >
-        <div class="demo-progress__fill"></div>
+        <div class="gpf-demo-progress__fill"></div>
       </div>
-      <span class="demo-progress__text">0 / 0</span>
+      <span class="gpf-demo-progress__text">0 / 0</span>
     </div>
   {%- endif -%}
 
-  <div class="demo-sections">
+  <div class="gpf-demo-guide__steps">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'heading' -%}
           {%- if block.settings.title != blank -%}
-            <h3 class="demo-section__title demo-section__title--block" {{ block.shopify_attributes }}>
+            <h3 class="gpf-demo-guide__section-title gpf-demo-guide__section-title--block" {{ block.shopify_attributes }}>
               {{ block.settings.title | escape }}
             </h3>
           {%- endif -%}
@@ -80,18 +80,18 @@
           -%}
           <button
             type="button"
-            class="demo-card"
+            class="gpf-demo-step"
             data-demo-step="{{ step_id | escape }}"
             data-demo-step-action="{{ block.settings.action | escape }}"
             {% if block.settings.store != 'all' %}data-demo-store-only="{{ block.settings.store }}"{% endif %}
             aria-pressed="false"
             {{ block.shopify_attributes }}
           >
-            <span class="demo-card__icon" aria-hidden="true"><span class="sc-interp"></span></span>
-            <span class="demo-card__content">
-              <span class="demo-card__title">{{ block.settings.title | escape }}</span>
+            <span class="gpf-demo-step__icon" aria-hidden="true"><span class="sc-interp"></span></span>
+            <span class="gpf-demo-step__content">
+              <span class="gpf-demo-step__title">{{ block.settings.title | escape }}</span>
               {%- if block.settings.description != blank -%}
-                <span class="demo-card__description">{{ block.settings.description | escape }}</span>
+                <span class="gpf-demo-step__description">{{ block.settings.description | escape }}</span>
               {%- endif -%}
             </span>
           </button>
@@ -100,15 +100,15 @@
   </div>
 
   {%- if section.settings.show_footer -%}
-    <div class="demo-footer">
+    <div class="gpf-demo-guide__footer">
       {%- if section.settings.footer_text != blank -%}
-        <div class="demo-footer__text rte">{{ section.settings.footer_text }}</div>
+        <div class="gpf-demo-guide__footer-text rte">{{ section.settings.footer_text }}</div>
       {%- endif -%}
 
       {%- if section.settings.button_label != blank -%}
         <a
           href="{{ install_url }}"
-          class="demo-footer__button"
+          class="gpf-demo-guide__footer-button"
           {% if section.settings.open_new_tab %}target="_blank" rel="noopener"{% endif %}
         >
           {{ section.settings.button_label | escape }}

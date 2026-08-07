@@ -1,4 +1,4 @@
-const ACTIVE_CLASS = 'demo-segment__button--active';
+const ACTIVE_CLASS = 'gpf-demo-segmented-control__button--active';
 const DEMO_SESSION_KEY = 'globo-demo:session-state';
 const LAYOUT_QUERY_PARAM = 'layout_filter';
 const LAYOUT_QUERY_VALUES = {
@@ -20,12 +20,12 @@ class GloboDemoControls {
   /** @param {HTMLElement} toolbar */
   constructor(toolbar) {
     this.toolbar = toolbar;
-    this.root = toolbar.closest('#globo-demo-page');
-    this.stage = this.root?.querySelector('.globo-page_content');
-    this.sidebar = this.root?.querySelector('#globo-aside_demo');
+    this.root = toolbar.closest('#gpf-demo');
+    this.stage = this.root?.querySelector('.gpf-demo__storefront');
+    this.guide = this.root?.querySelector('#gpf-demo-guide');
     this.mobileBreakpoint = window.matchMedia('(max-width: 1179px)');
     this.isFilterResultsPage = isFilterResultsPage(window.location.pathname);
-    this.guideCards = Array.from(this.root?.querySelectorAll('.demo-card[data-demo-step]') || []);
+    this.guideCards = Array.from(this.root?.querySelectorAll('.gpf-demo-step[data-demo-step]') || []);
     const persistedState = this.readPersistedState();
     const validStepIds = new Set(this.guideCards.map((card) => card.dataset.demoStep));
     const persistedSteps = Array.isArray(persistedState.doneSteps) ? persistedState.doneSteps : [];
@@ -71,8 +71,8 @@ class GloboDemoControls {
   }
 
   refreshGuide() {
-    this.sidebar = this.root?.querySelector('#globo-aside_demo');
-    this.guideCards = Array.from(this.root?.querySelectorAll('.demo-card[data-demo-step]') || []);
+    this.guide = this.root?.querySelector('#gpf-demo-guide');
+    this.guideCards = Array.from(this.root?.querySelectorAll('.gpf-demo-step[data-demo-step]') || []);
 
     const validStepIds = new Set(this.guideCards.map((card) => card.dataset.demoStep));
     this.doneSteps = new Set(
@@ -89,14 +89,14 @@ class GloboDemoControls {
   /** @param {MouseEvent} event */
   handleClick(event) {
     const target = event.target instanceof Element
-      ? event.target.closest('[data-demo-control], [data-demo-action], .demo-card[data-demo-step]')
+      ? event.target.closest('[data-demo-control], [data-demo-action], .gpf-demo-step[data-demo-step]')
       : null;
     if (!target) return;
 
     const control = target.dataset.demoControl;
     const value = target.dataset.demoValue;
 
-    if (target.matches('.demo-card[data-demo-step]')) {
+    if (target.matches('.gpf-demo-step[data-demo-step]')) {
       this.completeGuideStep(target);
       return;
     }
@@ -185,11 +185,11 @@ class GloboDemoControls {
   restoreGuideProgress() {
     this.guideCards.forEach((card) => {
       const isDone = this.doneSteps.has(card.dataset.demoStep);
-      card.classList.toggle('demo-card--checked', isDone);
+      card.classList.toggle('gpf-demo-step--checked', isDone);
       card.toggleAttribute('data-demo-done', isDone);
       card.setAttribute('aria-pressed', String(isDone));
 
-      const icon = card.querySelector('.demo-card__icon .sc-interp');
+      const icon = card.querySelector('.gpf-demo-step__icon .sc-interp');
       if (icon) icon.textContent = isDone ? '✓' : '';
     });
   }
@@ -201,11 +201,11 @@ class GloboDemoControls {
     const firstCompletion = !this.doneSteps.has(stepId);
     this.doneSteps.add(stepId);
 
-    card.classList.add('demo-card--checked');
+    card.classList.add('gpf-demo-step--checked');
     card.dataset.demoDone = 'true';
     card.setAttribute('aria-pressed', 'true');
 
-    const icon = card.querySelector('.demo-card__icon .sc-interp');
+    const icon = card.querySelector('.gpf-demo-step__icon .sc-interp');
     if (icon) icon.textContent = '✓';
 
     this.updateGuideProgress();
@@ -231,9 +231,9 @@ class GloboDemoControls {
     const completed = this.doneSteps.size;
     const total = this.guideCards.length;
     const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
-    const progress = this.sidebar?.querySelector('[data-demo-progress]');
-    const fill = progress?.querySelector('.demo-progress__fill');
-    const text = this.sidebar?.querySelector('.demo-progress__text');
+    const progress = this.guide?.querySelector('[data-demo-progress]');
+    const fill = progress?.querySelector('.gpf-demo-progress__fill');
+    const text = this.guide?.querySelector('.gpf-demo-progress__text');
     const pillCount = this.root.querySelector('[data-demo-guide-pill-count]');
 
     progress?.setAttribute('aria-valuemax', String(total));
@@ -246,11 +246,11 @@ class GloboDemoControls {
   resetGuideProgress() {
     this.doneSteps.clear();
     this.guideCards.forEach((card) => {
-      card.classList.remove('demo-card--checked');
+      card.classList.remove('gpf-demo-step--checked');
       delete card.dataset.demoDone;
       card.setAttribute('aria-pressed', 'false');
 
-      const icon = card.querySelector('.demo-card__icon .sc-interp');
+      const icon = card.querySelector('.gpf-demo-step__icon .sc-interp');
       if (icon) icon.textContent = '';
     });
     this.updateGuideProgress();
@@ -337,9 +337,9 @@ class GloboDemoControls {
   }
 
   updateGuide(isOpen) {
-    if (this.sidebar) {
-      this.sidebar.hidden = !isOpen;
-      this.sidebar.setAttribute('aria-hidden', String(!isOpen));
+    if (this.guide) {
+      this.guide.hidden = !isOpen;
+      this.guide.setAttribute('aria-hidden', String(!isOpen));
     }
 
     const toggle = this.toolbar.querySelector('[data-demo-action="toggle-guide"]');
@@ -357,7 +357,7 @@ class GloboDemoControls {
     const scrim = this.root.querySelector('[data-demo-guide-scrim]');
     if (scrim) scrim.hidden = !isOpen;
 
-    const progress = this.sidebar?.querySelector('.demo-progress__text');
+    const progress = this.guide?.querySelector('.gpf-demo-progress__text');
     const pillCount = pill?.querySelector('[data-demo-guide-pill-count]');
     if (pillCount && progress) pillCount.textContent = progress.textContent.replace(/\s+/g, '');
   }
@@ -385,12 +385,12 @@ class GloboDemoControls {
 }
 
 function installDemoStyles() {
-  if (document.getElementById('globo-demo-controls-style')) return;
+  if (document.getElementById('gpf-demo-runtime-style')) return;
 
   const style = document.createElement('style');
-  style.id = 'globo-demo-controls-style';
+  style.id = 'gpf-demo-runtime-style';
   style.textContent = `
-    #globo-demo-page [hidden] { display: none !important; }
+    #gpf-demo [hidden] { display: none !important; }
   `;
   document.head.append(style);
 }
@@ -415,8 +415,8 @@ if (document.readyState === 'loading') {
 
 document.addEventListener('shopify:section:load', (event) => {
   const section = event.target instanceof Element ? event.target : null;
-  const hasGuide = section?.matches('.demo-sidebar-section')
-    || section?.querySelector('#globo-aside_demo');
+  const hasGuide = section?.matches('.gpf-demo-guide-section')
+    || section?.querySelector('#gpf-demo-guide');
 
   if (hasGuide && window.globoDemoControls) {
     window.globoDemoControls.refreshGuide();
