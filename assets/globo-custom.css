@@ -932,10 +932,10 @@ span.header-logo__image-container.header-logo__image-container--original {
 .variations_button{
   display: none !important;
 }
-.gfqv-product-gallery {
+.gfqv-modal-content .gfqv-product-gallery {
     margin-bottom: 0 important;
 }
-.gfqv-product-image {
+.gfqv-modal-content .gfqv-product-image {
     border-radius: 14px !important;
     overflow: hidden;
 }
@@ -967,7 +967,7 @@ ul.gfqv-swatch-values li {
 span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
     border-radius: 50%;
 }
-span.gfqv-product__swatch-inner>.gfqv-swatch-text {
+.gfqv-modal-content span.gfqv-product__swatch-inner>.gfqv-swatch-text {
   border: 1px solid #e3e3e1;
   color: #171717;
   display: flex;
