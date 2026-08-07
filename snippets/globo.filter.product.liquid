@@ -80,7 +80,7 @@
             {%- assign optionIndex = 'option' | append: forloop.index -%}
             {%- assign optionIndexNumber = forloop.index -%}
             {%- if option.isSwatch -%}
-              <div class="spf-product__swatchs">
+              <div class="spf-product__swatchs round">
                 {%- for value in option.values -%}
                   {%- assign swatch = option.swatches[forloop.index0] -%}
                   <span data-option="{{optionIndexNumber}}" data-option-value="{{value | escape}}" class="spf-product__swatch{% if product.selected_or_first_available_variant and product.selected_or_first_available_variant[optionIndex] == value %} is-selected{% endif %}{% unless swatch.available %} soldout{% endunless %}" title="{{value | escape}}">
