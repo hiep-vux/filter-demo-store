@@ -101,9 +101,14 @@
     {%- for product_option in product_resource.options_with_values -%}
       {%- liquid
         assign swatch_count = product_option.values | map: 'swatch' | compact | size
+        assign option_name_downcase = product_option.name | downcase
+        assign is_color_option = false
+        if option_name_downcase == 'color' or option_name_downcase == 'colour' or option_name_downcase == 'màu' or option_name_downcase == 'màu sắc'
+          assign is_color_option = true
+        endif
       -%}
 
-      {% if swatch_count == 0 %}
+      {% if swatch_count == 0 and is_color_option == false %}
         {% continue %}
       {% endif %}
 
@@ -172,6 +177,26 @@
               if featured_media == blank
                 assign featured_media = fallback_featured_media
               endif
+
+              assign fallback_swatch_color = product_option_value.name | downcase
+              case fallback_swatch_color
+                when 'chalk'
+                  assign fallback_swatch_color = '#e9e5da'
+                when 'cream'
+                  assign fallback_swatch_color = '#f3ead3'
+                when 'ivory'
+                  assign fallback_swatch_color = '#fffff0'
+                when 'dust blue' or 'dusty blue'
+                  assign fallback_swatch_color = '#7796aa'
+                when 'camel'
+                  assign fallback_swatch_color = '#c19a6b'
+                when 'tan'
+                  assign fallback_swatch_color = '#d2b48c'
+                when 'nude'
+                  assign fallback_swatch_color = '#dec0a5'
+                when 'multi' or 'multicolor' or 'multi-color'
+                  assign fallback_swatch_color = 'conic-gradient(#e75b52, #efca4a, #66a56f, #668bc4, #e75b52)'
+              endcase
             %}
 
             <li class="variant-option__swatch">
@@ -202,6 +227,7 @@
                 {% render 'swatch',
                   swatch: product_option_value.swatch,
                   variant_image: featured_media,
+                  fallback_color: fallback_swatch_color,
                 %}
                 {% render 'strikethrough-variant', product_option: product_option_value %}
               </label>

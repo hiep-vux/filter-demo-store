@@ -143,11 +143,13 @@
     font-weight: 400;
   }
 
-  .main-collection-grid .product-card__content > .contents:has(.text-block) {
+  .main-collection-grid .product-card__content > .contents:has(.text-block),
+  .main-collection-grid .product-card__content .text-block:not(product-price) {
     order: 2;
   }
 
-  .main-collection-grid .product-card__content > .contents:has(.text-block) .text-block {
+  .main-collection-grid .product-card__content > .contents:has(.text-block) .text-block,
+  .main-collection-grid .product-card__content .text-block:not(product-price) {
     width: 100%;
     font-size: clamp(1rem, 1.45vw, 1.35rem);
     line-height: 1.25;
@@ -163,6 +165,12 @@
     margin-block-start: 10px;
     font-size: 0.94rem;
     line-height: 1;
+  }
+
+  .main-collection-grid .product-card__content .rating-wrapper {
+    order: 3;
+    width: 100%;
+    margin-block-start: 10px;
   }
 
   .main-collection-grid .collection-card__stars {
@@ -215,11 +223,18 @@
     margin-block-start: 14px;
   }
 
-  .main-collection-grid .collection-card__swatches swatches-variant-picker-component overflow-list::part(list) {
+  .main-collection-grid .product-card__content product-swatches {
+    order: 6;
+    width: 100%;
+    min-height: 43px;
+    margin-block-start: 14px;
+  }
+
+  .main-collection-grid :is(.collection-card__swatches, product-swatches) swatches-variant-picker-component overflow-list::part(list) {
     gap: 12px;
   }
 
-  .main-collection-grid .collection-card__swatches .variant-option__button-label--has-swatch {
+  .main-collection-grid :is(.collection-card__swatches, product-swatches) .variant-option__button-label--has-swatch {
     --variant-picker-swatch-width: 34px;
     --variant-picker-swatch-height: 34px;
     --variant-picker-swatch-radius: 50%;
@@ -321,7 +336,8 @@
       font-size: 0.72rem;
     }
 
-    .main-collection-grid .product-card__content > .contents:has(.text-block) .text-block {
+    .main-collection-grid .product-card__content > .contents:has(.text-block) .text-block,
+    .main-collection-grid .product-card__content .text-block:not(product-price) {
       font-size: 0.94rem;
       -webkit-line-clamp: 2;
     }
@@ -350,7 +366,12 @@
       margin-block-start: 10px;
     }
 
-    .main-collection-grid .collection-card__swatches .variant-option__button-label--has-swatch {
+    .main-collection-grid .product-card__content product-swatches {
+      min-height: 33px;
+      margin-block-start: 10px;
+    }
+
+    .main-collection-grid :is(.collection-card__swatches, product-swatches) .variant-option__button-label--has-swatch {
       --variant-picker-swatch-width: 26px;
       --variant-picker-swatch-height: 26px;
     }

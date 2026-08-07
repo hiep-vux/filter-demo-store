@@ -4,8 +4,13 @@
   assign block_settings = block.settings
   for product_option in closest.product.options_with_values
     assign swatch_count = product_option.values | map: 'swatch' | compact | size
+    assign option_name_downcase = product_option.name | downcase
+    assign is_color_option = false
+    if option_name_downcase == 'color' or option_name_downcase == 'colour' or option_name_downcase == 'màu' or option_name_downcase == 'màu sắc'
+      assign is_color_option = true
+    endif
 
-    if swatch_count > 0
+    if swatch_count > 0 or is_color_option
       assign product_has_swatches = true
     endif
   endfor
@@ -38,7 +43,7 @@
     "
     {{ block.shopify_attributes }}
   >
-    {% render 'variant-swatches', product_resource: closest.product %}
+    {% render 'variant-swatches', product_resource: closest.product, has_option_selected: true %}
   </product-swatches>
 {% endif %}
 

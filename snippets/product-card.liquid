@@ -34,6 +34,14 @@
 
   assign product_card_id = 'product-card-link-' | append: block.id | append: '-' | append: product.id
   assign product_card_gap_value = product_card_gap | default: block_settings.product_card_gap
+  assign children_has_rating = false
+  assign children_has_swatches = false
+  if children contains 'rating-wrapper'
+    assign children_has_rating = true
+  endif
+  if children contains '<product-swatches'
+    assign children_has_swatches = true
+  endif
 
   # variant_to_link drives the featured image used by the main-product view transition.
   assign variant_to_link = product.selected_or_first_available_variant
@@ -130,7 +138,7 @@
         endfor
       %}
 
-      {% if card_rating != blank %}
+      {% if card_rating != blank and children_has_rating == false %}
         <div class="collection-card__rating" aria-label="{{ card_rating }} out of 5 stars">
           <span class="collection-card__stars" aria-hidden="true">
             {% for star_index in (1..5) %}<span{% if star_index <= rounded_card_rating %} class="is-filled"{% endif %}>★</span>{% endfor %}
@@ -152,15 +160,20 @@
         assign has_card_swatches = false
         for product_option in product.options_with_values
           assign card_swatch_count = product_option.values | map: 'swatch' | compact | size
-          if card_swatch_count > 0
+          assign card_option_name_downcase = product_option.name | downcase
+          assign is_card_color_option = false
+          if card_option_name_downcase == 'color' or card_option_name_downcase == 'colour' or card_option_name_downcase == 'màu' or card_option_name_downcase == 'màu sắc'
+            assign is_card_color_option = true
+          endif
+          if card_swatch_count > 0 or is_card_color_option
             assign has_card_swatches = true
             break
           endif
         endfor
       %}
-      {% if has_card_swatches %}
+      {% if has_card_swatches and children_has_swatches == false %}
         <div class="collection-card__swatches" style="--product-swatches-alignment: start; --product-swatches-alignment-mobile: start; --product-swatches-padding-block-start: 0px; --product-swatches-padding-block-end: 0px; --product-swatches-padding-inline-start: 0px; --product-swatches-padding-inline-end: 0px;">
-          {% render 'variant-swatches', product_resource: product %}
+          {% render 'variant-swatches', product_resource: product, has_option_selected: true %}
         </div>
       {% endif %}
 
