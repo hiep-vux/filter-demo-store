@@ -953,7 +953,10 @@ ul.gfqv-swatch-values li {
 span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
     border-radius: 50%;
 }
-
+span.gfqv-product__swatch-inner>.gfqv-swatch-text {
+  min-height: 40px !important;
+  min-width: 44px !important;
+}
 .gfqv-product-wrapper .spf-product-card__rating {
   display: flex;
   align-items: center;
