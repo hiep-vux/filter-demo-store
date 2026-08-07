@@ -940,7 +940,9 @@ span.header-logo__image-container.header-logo__image-container--original {
     text-transform: none !important;
     color: rgb(109, 109, 104);
 }
-
+.gfqv-description {
+    color: #8a8a86 !important;
+}
 ul.gfqv-swatch-values {
     margin: 9px 0 0!important;
     gap: 7px;
