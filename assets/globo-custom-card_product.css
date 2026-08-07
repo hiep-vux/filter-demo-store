@@ -220,11 +220,14 @@
   width: 30px !important;
   height: 30px !important;
   margin: 0 !important;
-  padding: 4px !important;
   background: transparent;
   border: 1px solid transparent !important;
   border-radius: 50% !important;
   cursor: pointer;
+}
+
+.spf-product-card .spf-product__swatch.is-selected{
+  padding: 2px !important;
 }
 
 .spf-product-card .spf-product__swatch.is-selected {
