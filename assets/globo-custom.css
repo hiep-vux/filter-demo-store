@@ -933,6 +933,14 @@ span.header-logo__image-container.header-logo__image-container--original {
 span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
     border-radius: 50%;
 }
+.size-medium .gfqv-product__swatch-outer {
+    height: 32px !important;
+    min-width: 32px !important;
+    padding: 3.5px;
+}
+.size-medium .gfqv-swatch-value:not(.is-selected) .gfqv-product__swatch-outer{
+  padding: 0 !important;
+}
 #gfqv-modal .gfqv-modal-content .gfqv-close-modal {
     right: 14px !important;
     top: 14px !important;
