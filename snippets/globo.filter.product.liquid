@@ -23,6 +23,37 @@
   {%- endif -%}
 {%- endif -%}
 {%- assign images_count = product.images | size -%}
+{%- assign product_rating = product.metafields.reviews.rating.value.rating -%}
+{%- if product_rating == blank -%}
+  {%- assign product_rating = product.metafields.reviews.rating.value -%}
+{%- endif -%}
+{%- if product_rating == blank -%}
+  {%- assign product_rating = product.metafields.custom.rating.value | default: product.metafields.custom.rating -%}
+{%- endif -%}
+{%- if product_rating == blank -%}
+  {%- assign product_rating = product.rating -%}
+{%- endif -%}
+{%- assign product_review_count = product.metafields.reviews.rating_count.value | default: product.metafields.reviews.rating_count -%}
+{%- if product_review_count == blank -%}
+  {%- assign product_review_count = product.metafields.custom.review_count.value | default: product.metafields.custom.review_count -%}
+{%- endif -%}
+{%- if product_review_count == blank -%}
+  {%- assign product_review_count = product.review_count -%}
+{%- endif -%}
+{%- assign product_material = product.metafields.custom.material.value | default: product.metafields.custom.material -%}
+{%- assign has_meta_before_color = false -%}
+{%- if product.product_type != blank or product_material != blank -%}
+  {%- assign has_meta_before_color = true -%}
+{%- endif -%}
+{%- assign selected_color = '' -%}
+{%- for option in product.options -%}
+  {%- assign option_name = option.name | downcase -%}
+  {%- if option_name == 'color' or option_name == 'colour' or option_name == 'màu' or option_name == 'màu sắc' -%}
+    {%- assign option_key = 'option' | append: forloop.index -%}
+    {%- assign selected_color = selected_or_first_available_variant[option_key] -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
 <div{% if showPageData %} data-page="{{page}}"{% endif %} class="spf-col-xl-4 spf-col-lg-4 spf-col-md-6 spf-col-sm-6 spf-col-6">
     <div class="spf-product-card spf-product-card__left spf-product-card__template-5{% unless product.available %} spf-soldout{% endunless %}">
         <div class="spf-product-card__inner">
@@ -33,13 +64,13 @@
                         {{translation.product.sale | default: "Sale"}}
                     </span>
                 {%- endunless -%}
-        <a title="Quick view" href="javascript:;" onclick="globofilter.quickView('{{root_url}}{{ product.url }}')" class="open-quick-view">\
+        <a title="Quick view" href="javascript:;" onclick="globofilter.quickView('{{root_url}}{{ product.url }}')" class="open-quick-view">
             <span class="quick-view_icon">
                 <svg width="15" height="15" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path data-name="Path 41" d="m15.854 15.146-4.421-4.42a6.511 6.511 0 1 0-.707.707l4.42 4.421a.5.5 0 0 0 .708-.708M6.5 12A5.5 5.5 0 1 1 12 6.5 5.506 5.506 0 0 1 6.5 12M7 3.5a.5.5 0 0 1-.5.5A2.5 2.5 0 0 0 4 6.5a.5.5 0 0 1-1 0A3.5 3.5 0 0 1 6.5 3a.5.5 0 0 1 .5.5"/></svg>
             </span>
             <span class="quick-view_text">Quick view</span>
         </a>
-        <a class="spf-product-card__image-wrapper{% if images_count > 1 %} hover-effect{% endif %}" href="{{root_url}}{{ product.url }}{{variant_url}}" style="padding-top:140%;">
+        <a class="spf-product-card__image-wrapper{% if images_count > 1 %} hover-effect{% endif %}" href="{{root_url}}{{ product.url }}{{variant_url}}" style="padding-top:100%;">
             {%- if images_count > 0 -%}
             {%- for image in product.images -%}
               <img
@@ -65,25 +96,58 @@
                 <div class="h4 spf-product-card__title">
             <a translatable href="{{root_url}}{{ product.url }}{{variant_url}}">{{product.title}}</a>
                     </div>
+          {%- if product_rating != blank -%}
+            {%- assign rating_width = product_rating | times: 20 -%}
+            <div class="spf-product-card__rating" aria-label="{{ product_rating | round: 1 }} out of 5 stars, {{ product_review_count | default: 0 }} reviews">
+              <span class="spf-product-card__stars" role="img" aria-hidden="true">
+                <span class="spf-product-card__stars-empty">★★★★★</span>
+                <span class="spf-product-card__stars-filled" style="width: {{ rating_width }}%;">★★★★★</span>
+              </span>
+              <span class="spf-product-card__rating-value">{{ product_rating | round: 1 }}</span>
+              <span class="spf-product-card__review-count">({{ product_review_count | default: 0 }})</span>
+            </div>
+          {%- endif -%}
                         <div class="spf-product-card__price-wrapper">
             {%- if product_compare_at_price > product_price -%}
-            <span class="spf-product-card__oldprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_compare_at_price | money }}</span>
             <span class="spf-product-card__saleprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_price | money }}</span>
+            <span class="spf-product-card__oldprice{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_compare_at_price | money }}</span>
             {% else %}
             <span class="spf-product-card__price{% unless currencyFormat contains 'money' %} money{% endunless %}">{{ product_price | money }}</span>
             {% endif %}
         </div>
+
+          {%- if product.product_type != blank or product_material != blank or selected_color != blank -%}
+            <div class="spf-product-card__meta">
+              {%- if product.product_type != blank -%}<span>{{ product.product_type }}</span>{%- endif -%}
+              {%- if product.product_type != blank and product_material != blank -%}<span aria-hidden="true"> · </span>{%- endif -%}
+              {%- if product_material != blank -%}<span>{{ product_material }}</span>{%- endif -%}
+              {%- if selected_color != blank and has_meta_before_color -%}<span aria-hidden="true"> · </span>{%- endif -%}
+              {%- if selected_color != blank -%}<span>{{ selected_color }}</span>{%- endif -%}
+            </div>
+          {%- endif -%}
 
 
           <div class="spf-product__swatchs_container">
           {%- for option in product.options -%}
             {%- assign optionIndex = 'option' | append: forloop.index -%}
             {%- assign optionIndexNumber = forloop.index -%}
-            {%- if option.isSwatch -%}
+            {%- assign normalized_option_name = option.name | downcase -%}
+            {%- if option.isSwatch or swatch_options contains normalized_option_name -%}
               <div class="spf-product__swatchs round">
                 {%- for value in option.values -%}
                   {%- assign swatch = option.swatches[forloop.index0] -%}
-                  <span data-option="{{optionIndexNumber}}" data-option-value="{{value | escape}}" class="spf-product__swatch{% if product.selected_or_first_available_variant and product.selected_or_first_available_variant[optionIndex] == value %} is-selected{% endif %}{% unless swatch.available %} soldout{% endunless %}" title="{{value | escape}}">
+                  {%- assign fallback_swatch_color = value | downcase -%}
+                  {%- case fallback_swatch_color -%}
+                    {%- when 'chalk' -%}{%- assign fallback_swatch_color = '#e9e5da' -%}
+                    {%- when 'cream' -%}{%- assign fallback_swatch_color = '#f3ead3' -%}
+                    {%- when 'ivory' -%}{%- assign fallback_swatch_color = '#fffff0' -%}
+                    {%- when 'dust blue' or 'dusty blue' -%}{%- assign fallback_swatch_color = '#7796aa' -%}
+                    {%- when 'camel' -%}{%- assign fallback_swatch_color = '#c19a6b' -%}
+                    {%- when 'tan' -%}{%- assign fallback_swatch_color = '#d2b48c' -%}
+                    {%- when 'nude' -%}{%- assign fallback_swatch_color = '#dec0a5' -%}
+                    {%- when 'multi' or 'multicolor' or 'multi-color' -%}{%- assign fallback_swatch_color = 'conic-gradient(#e75b52, #efca4a, #66a56f, #668bc4, #e75b52)' -%}
+                  {%- endcase -%}
+                  <span data-option="{{optionIndexNumber}}" data-option-value="{{value | escape}}" class="spf-product__swatch{% if product.selected_or_first_available_variant and product.selected_or_first_available_variant[optionIndex] == value %} is-selected{% endif %}{% if swatch != blank and swatch.available == false %} soldout{% endif %}" title="{{value | escape}}">
                     <span translatable class="spf-product__swatch-inner">
                       {%- if swatch.mode == 4 and swatch.image -%}
                         <span class="spf-product__swatch-image" style="background-image: url('{{ swatch.image | img_url: '24x' }}')"></span>
@@ -97,7 +161,8 @@
                       {%- elsif swatch.lable -%}
                         <span class="spf-product__swatch-text">{{swatch.lable}}</span>
                       {%- else -%}
-                        <span class="spf-product__swatch-text">{{value}}</span>
+                        <span class="spf-product__swatch-color spf-product__swatch-color--fallback" style="background: {{ fallback_swatch_color }}"></span>
+                        <span class="visually-hidden">{{value}}</span>
                       {%- endif -%}
                     </span>
                   </span>
