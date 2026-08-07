@@ -234,10 +234,11 @@
 
 .spf-product-card .spf-product__swatch.is-selected{
   padding: 2px !important;
+  border-color: #171717 !important;
 }
 
-.spf-product-card .spf-product__swatch.is-selected {
-  border-color: #171717 !important;
+.spf-product-card .spf-product__swatch:not(.is-selected) {
+    box-shadow: none !important;
 }
 
 .spf-product-card .spf-product__swatch-inner,
