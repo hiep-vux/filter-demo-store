@@ -1099,5 +1099,11 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
   font-size: 16px !important;
   color: #a3a39f !important;
 }
+.quickview_label{
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8a86;
+}
 
 @keyframes omFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
