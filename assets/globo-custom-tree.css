@@ -655,7 +655,7 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
 
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch a>span:not(.gf-option-value, .gf-label),
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button>span:not(.gf-option-value, .gf-label) {
-    border: 1px solid var(--color-foreground);
+    border: 1px solid #f0f0f0;
     overflow: hidden;
 }
 
