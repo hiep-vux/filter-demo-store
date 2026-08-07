@@ -296,13 +296,13 @@
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
-.spf-product-card .spf-product__form-btn-addtocart:hover:not(:disabled) {
+#gf-products .spf-product-card .spf-product__form-btn-addtocart:hover:not(:disabled) {
   color: #fff !important;
   background: #171717 !important;
   border-color: #171717 !important;
 }
 
-.spf-product-card .spf-product__form-btn-addtocart:disabled {
+#gf-products .spf-product-card .spf-product__form-btn-addtocart:disabled {
   color: #999995 !important;
   cursor: not-allowed;
   opacity: 0.65;
