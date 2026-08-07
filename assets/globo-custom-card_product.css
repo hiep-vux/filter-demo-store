@@ -217,7 +217,7 @@
 .spf-product-card .spf-product__swatchs {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
   margin: 0 !important;
 }
 
