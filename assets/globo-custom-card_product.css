@@ -35,6 +35,15 @@
     object-fit: cover;
 }
 
+.h4.spf-product-card__title a {
+    color: #171717 !important;
+    font-size: 16.5px !important;
+    font-weight: 500 !important;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
+}
+
 .spf-product-card .spf-product__label {
   position: absolute;
   z-index: 3;
