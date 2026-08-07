@@ -926,7 +926,7 @@ span.header-logo__image-container.header-logo__image-container--original {
 
 /* App template quickview */
 #gfqv-modal .gfqv-modal-content .product {
-    border-radius: 18px;
+  border-radius: 18px !important;
 }
 .gfqv-product-thumbnails,
 .variations_button{
@@ -940,9 +940,9 @@ span.header-logo__image-container.header-logo__image-container--original {
     overflow: hidden;
 }
 #gfqv-modal .owl-carousel .owl-item img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+  object-fit: cover;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .gfqv-swatch>label {
