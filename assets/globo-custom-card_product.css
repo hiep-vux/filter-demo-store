@@ -323,4 +323,5 @@
   border: 0 !important;
   box-shadow: none !important;
   min-height: 36px;
+  transition: opacity .28s ease, transform .38s ease, visibility .18s ease !important;
 }
