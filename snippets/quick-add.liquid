@@ -4,11 +4,20 @@
   @param {object} product - The product object
   @param {string} section_id - The section ID
   @param {object} [block] - The block object
+  @param {string} [form_id_suffix] - Optional suffix when a product has more than one quick-add instance
+  @param {boolean} [quick_view_only] - Render a modal-opening Quick view button instead of add-to-cart controls
+  @param {boolean} [show_full_add_to_cart_text] - Use the full Add to cart label
 {%- enddoc -%}
 
 {% liquid
   assign product_form_id = 'QuickAdd-ProductForm-' | append: product.id | append: '-' | append: block.id
+  if form_id_suffix != blank
+    assign product_form_id = product_form_id | append: '-' | append: form_id_suffix
+  endif
   assign add_to_cart_text = 'actions.add' | t
+  if show_full_add_to_cart_text
+    assign add_to_cart_text = 'actions.add_to_cart' | t
+  endif
   assign choose_options_text = 'actions.choose' | t
   # Logic to determine which variant to use (matching swatch selection logic from product-card)
   assign variant = product.selected_or_first_available_variant
@@ -54,6 +63,13 @@
     assign render_add = false
     assign render_choose = true
   endif
+
+  if quick_view_only
+    assign initial_button = 'choose'
+    assign render_add = false
+    assign render_choose = true
+    assign choose_options_text = 'Quick view'
+  endif
 %}
 
 {% render 'fly-to-cart-styles' %}
@@ -78,7 +94,7 @@
   quick-add modal via quick-add-component/handleClick - so it lives outside the form.
 {% endcomment %}
 <quick-add-component
-  class="quick-add custom-color-quick-add"
+  class="quick-add custom-color-quick-add{% if quick_view_only %} quick-add--quick-view{% endif %}"
   ref="quickAdd"
   data-product-title="{{ product.title }}"
   data-product-id="{{ product.id }}"

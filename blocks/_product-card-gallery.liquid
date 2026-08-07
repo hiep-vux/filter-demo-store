@@ -27,7 +27,11 @@
       </div>
     {%- endif -%}
     {% if product.available and settings.quick_add or settings.mobile_quick_add %}
-      {% render 'quick-add', product: product, section_id: section.id %}
+      {% if section.type == 'main-collection' %}
+        {% render 'quick-add', product: product, section_id: section.id, quick_view_only: true, form_id_suffix: 'quick-view' %}
+      {% else %}
+        {% render 'quick-add', product: product, section_id: section.id %}
+      {% endif %}
     {% endif %}
   {% endunless %}
 {% endcapture %}
