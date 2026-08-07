@@ -1081,6 +1081,13 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
 .gfqv-swatch {
     margin-bottom: 14px !important;
 }
+.gfqv-product-card__price-wrapper{
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 7px;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
 .gfqv-product-card__oldprice, 
 .gfqv-product-card__price, 
 .gfqv-product-card__saleprice {
