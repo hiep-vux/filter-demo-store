@@ -4,7 +4,10 @@
     display: none !important;
 }
 
-
+#gf-tree,
+#gf-grid{
+    --color-foreground: #171717;
+}
 .spf-has-filter.theme-store-id-2481.spf-layout-theme #gf-products li.product-grid__item {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -36,7 +39,7 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     font-family: var(--font-paragraph--family);
     font-style: var(--font-paragraph--style);
     font-weight: var(--font-paragraph--weight) !important;
-    font-size: var(--font-h4--size) !important;
+    font-size: 16px !important;
     text-transform: var(--facet-label-transform) !important;
     color: var(--color-foreground) !important;
     display: flex;
@@ -49,7 +52,7 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     font-family: var(--font-h4--family);
     font-style: var(--font-h4--style);
     font-weight: var(--font-h4--weight) !important;
-    font-size: var(--font-h4--size) !important;
+    font-size: 16px !important;
     line-height: var(--font-h4--line-height);
     letter-spacing: var(--font-h4--letter-spacing);
     text-transform: var(--font-h4--case) !important;
