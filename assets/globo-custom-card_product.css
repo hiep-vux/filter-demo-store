@@ -1,6 +1,7 @@
 /* Product cards rendered by Smart Product Filter & Search (Globo). */
 #gf-products{
     margin: 0 !important;
+    gap: 0 !important;
 }
 .gpf-padding{
     padding: 0 9px !important;
