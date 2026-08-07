@@ -207,7 +207,6 @@
 }
 
 .spf-product-card .spf-product__swatchs_container {
-  min-height: 48px;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -273,6 +272,7 @@
 }
 
 #gf-products .spf-product-card .spf-product__form-btn-addtocart {
+  margin: 10px 0 !important;
   display: flex !important;
   align-items: center;
   justify-content: center;
