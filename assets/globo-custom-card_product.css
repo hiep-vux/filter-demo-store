@@ -1,4 +1,7 @@
 /* Product cards rendered by Smart Product Filter & Search (Globo). */
+#gf-products{
+    margin: 0 !important;
+}
 .spf-product-card.spf-product-card__template-5 {
   display: flex;
   flex-direction: column;
