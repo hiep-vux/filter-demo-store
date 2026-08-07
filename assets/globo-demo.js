@@ -428,6 +428,7 @@ document.addEventListener('shopify:section:load', (event) => {
 
 
 
+// custom search
 window.addEventListener('globoFilterSearchDrawerOpened', function () {
     const searchPopup = document.querySelector('#glFilter-search-popup');
     const mainContent = document.querySelector('#MainContent');
@@ -437,3 +438,5 @@ window.addEventListener('globoFilterSearchDrawerOpened', function () {
     mainContent.parentNode.insertBefore(searchPopup, mainContent);
 
 });
+// custom card product
+window.isAjaxCartEnabled = true;
