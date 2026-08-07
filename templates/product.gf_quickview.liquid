@@ -51,6 +51,7 @@
               </div>
               <div class="spf-col-md-6 spf-col-sm-12 spf-col-xs-12 spf-col-md-offset-1 gfqv-product-summary">
                 <div class="gfqv-product-details">
+                 <span class="quickview_title">Quick view</span>
                   <h1 itemprop="name" class="gfqv-product-title"><a href="{{ product.url | within: collection }}">{{product.title}}</a></h1>
                    {%- if product_rating != blank -%}
                         {%- assign rating_width = product_rating | times: 20 -%}
