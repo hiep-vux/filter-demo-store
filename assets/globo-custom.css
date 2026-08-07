@@ -942,6 +942,21 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
     border-radius: 50% !important;
     background: #f2f1eeff !important;
 }
+#gfqv-modal .gfqv-modal-content .product .gfqv-close-modal:after,
+#gfqv-modal .gfqv-modal-content .product .gfqv-close-modal:before {
+    height: 16px !important;
+    width: 1.5px !important;
+    background-color: #333 !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform-origin: center !important;
+}
 
+#gfqv-modal .gfqv-modal-content .product .gfqv-close-modal:before {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+}
 
+#gfqv-modal .gfqv-modal-content .product .gfqv-close-modal:after {
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+}
 @keyframes omFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
