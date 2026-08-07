@@ -31,8 +31,8 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     }
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .gf-block-title h3,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .gf-block-title .h3 {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .gf-block-title h3,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .gf-block-title .h3 {
     font-family: var(--font-paragraph--family);
     font-style: var(--font-paragraph--style);
     font-weight: var(--font-paragraph--weight) !important;
@@ -45,7 +45,7 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     line-height: var(--font-paragraph--line-height);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .globo-selected-items-wrapper .gf-block-title .h3 {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .globo-selected-items-wrapper .gf-block-title .h3 {
     font-family: var(--font-h4--family);
     font-style: var(--font-h4--style);
     font-weight: var(--font-h4--weight) !important;
@@ -55,66 +55,66 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     text-transform: var(--font-h4--case) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .is-collapsed .gf-block-title h3,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .is-collapsed .gf-block-title .h3 {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .is-collapsed .gf-block-title h3,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .is-collapsed .gf-block-title .h3 {
     --facets-hover-opacity: 75%;
     opacity: var(--facets-hover-opacity);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-clear,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-clear-all,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-refine-toggle {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-clear,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-clear-all,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-refine-toggle {
     color: var(--color-foreground) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme span.gf-count {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) span.gf-count {
     opacity: 1;
     font-size: var(--font-paragraph--size) !important;
     font-weight: var(--font-paragraph--weight) !important;
     margin-left: 5px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li a,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li button,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block span.gf-count {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block span.gf-count {
     color: var(--color-foreground-muted) !important;
     transition: color .2s ease, font-weight .2s ease;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li a,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li button {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button {
     --facets-gap: .7rem;
     font-size: var(--font-paragraph--size) !important;
     font-weight: var(--font-paragraph--weight) !important;
     padding: calc(var(--facets-gap)/ 2) 0;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .checked span.gf-count,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li a.checked,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li button.checked {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .checked span.gf-count,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a.checked,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button.checked {
     font-weight: 500 !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme a:hover span.gf-count,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme button:hover span.gf-count,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li a:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li button:hover {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a:hover span.gf-count,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button:hover span.gf-count,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button:hover {
     color: rgb(from var(--color-foreground) r g b / 90%) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme button.gf-controls-search-button svg path,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .gf-filter-header .gf-close-canvas svg path,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-clear svg path {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button.gf-controls-search-button svg path,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .gf-filter-header .gf-close-canvas svg path,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-clear svg path {
     fill: var(--color-foreground);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-Checkbox {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-Checkbox {
     border-radius: 5px;
 }
 
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-RadioButton,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-Checkbox {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-RadioButton,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-Checkbox {
     --checkbox-size: 16px;
     transition: all .2s ease;
     width: var(--checkbox-size);
@@ -126,7 +126,7 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     position: relative;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .checked .gf-RadioButton:before {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .checked .gf-RadioButton:before {
     content: '';
     width: 7px;
     height: 7px;
@@ -137,32 +137,32 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     background-color: var(--color-background);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .checked .gf-RadioButton,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .checked .gf-Checkbox {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .checked .gf-RadioButton,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .checked .gf-Checkbox {
     border-color: var(--color-foreground);
     background-color: var(--color-foreground);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme button:not(.checked):hover>.gf-RadioButton,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme button:not(.checked):hover>.gf-Checkbox,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme a:not(.checked):hover>.gf-RadioButton,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme a:not(.checked):hover>.gf-Checkbox {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button:not(.checked):hover>.gf-RadioButton,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button:not(.checked):hover>.gf-Checkbox,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a:not(.checked):hover>.gf-RadioButton,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a:not(.checked):hover>.gf-Checkbox {
     border-color: rgb(from var(--color-foreground) r g b / 40%);
     background-color: rgb(from var(--color-foreground) r g b / 5%);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme button.checked:hover>.gf-RadioButton,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme button.checked:hover>.gf-Checkbox,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme a.checked:hover>.gf-RadioButton,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme a.checked:hover>.gf-Checkbox {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button.checked:hover>.gf-RadioButton,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button.checked:hover>.gf-Checkbox,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a.checked:hover>.gf-RadioButton,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a.checked:hover>.gf-Checkbox {
     background-color: rgb(from var(--color-foreground) r g b / 85%);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .checked .gf-Checkbox {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .checked .gf-Checkbox {
     background-image: none;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .checked .gf-Checkbox:after {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .checked .gf-Checkbox:after {
     content: "";
     display: block;
     position: absolute;
@@ -177,26 +177,26 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     top: 7px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left .gf-option-block,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas .gf-option-block,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-option-block {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left .gf-option-block,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas .gf-option-block,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-option-block {
     border-bottom: var(--style-border-width) solid var(--color-border);
     padding: var(--padding-sm) 0 !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left .gf-option-block:last-child,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas .gf-option-block:last-child {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left .gf-option-block:last-child,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas .gf-option-block:last-child {
     border-bottom: 0;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul.gf-option-box {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul.gf-option-box {
     padding: 0 2px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-block-title .h3:after,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-block-title h3:after,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block.is-collapsed .gf-block-title .h3:after,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block.is-collapsed .gf-block-title h3:after {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-block-title .h3:after,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-block-title h3:after,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block.is-collapsed .gf-block-title .h3:after,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block.is-collapsed .gf-block-title h3:after {
     float: right;
     font-weight: var(--font-paragraph--weight);
     content: "\f107";
@@ -207,29 +207,29 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     margin: 0;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block:not(.is-collapsed) .gf-block-title .h3:after,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block:not(.is-collapsed) .gf-block-title h3:after {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block:not(.is-collapsed) .gf-block-title .h3:after,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block:not(.is-collapsed) .gf-block-title h3:after {
     transform: rotate(180deg);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-block-title:hover .h3:after,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-block-title:hover h3:after {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-block-title:hover .h3:after,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-block-title:hover h3:after {
     --icon-opacity: 1;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #setLimit {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #setLimit {
     background-image: none;
     cursor: pointer;
     font-size: var(--font-paragraph--size);
     font-family: var(--font-paragraph--family);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #setLimit,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #setLimit option {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #setLimit,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #setLimit option {
     color: var(--color-foreground);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .noUi-handle {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .noUi-handle {
     background: var(--color-background);
     border: 4px solid var(--color-primary-button-background);
     top: -7px;
@@ -237,32 +237,32 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     height: 16px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .noUi-handle.noUi-handle-lower {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .noUi-handle.noUi-handle-lower {
     right: -4px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .noUi-connect {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .noUi-connect {
     background-color: var(--color-primary-button-background);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .noUi-base,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .noUi-connects {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .noUi-base,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .noUi-connects {
     height: 2px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li a:hover {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a:hover {
     color: var(--color-foreground);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by {
     background: transparent !important;
     border: 0 !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block.gf-option-block-select select,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-range-inputs input[type=text],
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme input.gf-controls-search-input,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme input.gf-search {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block.gf-option-block-select select,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-range-inputs input[type=text],
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) input.gf-controls-search-input,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) input.gf-search {
     border: var(--style-border-width-inputs) solid var(--color-input-border);
     border-radius: var(--style-border-radius-inputs);
     color: var(--color-foreground);
@@ -271,31 +271,31 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     -webkit-font-smoothing: antialiased;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block.gf-option-block-select select:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-range-inputs input[type=text]:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme input.gf-controls-search-input:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme input.gf-search:hover {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block.gf-option-block-select select:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-range-inputs input[type=text]:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) input.gf-controls-search-input:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) input.gf-search:hover {
     background-color: var(--color-input-hover-background);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block.gf-option-block-select select:focus-visible,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-range-inputs input[type=text]:focus-visible,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme input.gf-controls-search-input:focus-visible,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme input.gf-search:focus-visible {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block.gf-option-block-select select:focus-visible,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-range-inputs input[type=text]:focus-visible,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) input.gf-controls-search-input:focus-visible,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) input.gf-search:focus-visible {
     outline: var(--focus-outline-width) solid currentcolor;
     outline-offset: var(--focus-outline-offset);
     background-color: var(--color-input-hover-background);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-range-inputs input[type=text]:is(:hover, :focus-visible) {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-range-inputs input[type=text]:is(:hover, :focus-visible) {
     box-shadow: var(--input-box-shadow-focus);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme input.gf-controls-search-input {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) input.gf-controls-search-input {
     height: 48px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-range-inputs input[type=text] {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-range-inputs input[type=text] {
     text-align: right;
     font-size: var(--font-paragraph--size);
     padding: var(--input-padding);
@@ -305,48 +305,48 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     transition: box-shadow var(--animation-speed) ease, background-color var(--animation-speed) ease;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by label {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by label {
     font-size: var(--font-paragraph--size);
     text-transform: var(--facet-label-transform);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-grid {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-grid {
     position: relative;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-block-scroll {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-block-scroll {
     max-height: 250px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left #gf-tree,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left #gf-tree:not(.spf-hidden)+#gf-grid,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.offcanvas-open #gf-tree{
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left #gf-tree,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left #gf-tree:not(.spf-hidden)+#gf-grid,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).offcanvas-open #gf-tree{
     background: var(--color-background) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by label,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme span.gf-summary,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li a,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .noUi-value,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .globo-selected-items-wrapper .selected-item>.clear-refinements {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by label,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) span.gf-summary,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .noUi-value,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .globo-selected-items-wrapper .selected-item>.clear-refinements {
     color: var(--color-foreground) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .globo-selected-items-wrapper {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .globo-selected-items-wrapper {
     padding: 0;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme span.gf-summary,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme span.gf-summary b {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) span.gf-summary,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) span.gf-summary b {
     padding-left: 0;
     font-size: var(--font-paragraph--size);
     font-weight: var(--font-paragraph--weight);
     text-transform: var(--facet-label-transform);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf_pagination_wrap .pagination>span.current,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf_pagination_wrap .pagination>span.deco,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf_pagination_wrap .pagination>span>a {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf_pagination_wrap .pagination>span.current,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf_pagination_wrap .pagination>span.deco,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf_pagination_wrap .pagination>span>a {
     font-size: var(--font-paragraph--size);
     display: inline-flex;
     justify-content: center;
@@ -357,24 +357,24 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     margin: 0 .5rem;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf_pagination_wrap .pagination>span.current {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf_pagination_wrap .pagination>span.current {
     font-weight: 700 !important;
     background-color: var(--color-foreground);
     color: var(--color-background) !important;
     border-radius: var(--style-border-radius-inputs);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .noUi-marker-horizontal.noUi-marker,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .content ul li:before,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-block-title .gf-clear,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .facets-block-wrapper--vertical,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .facets-controls-wrapper,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .facets-toggle,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .facets--horizontal .facets__form {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .noUi-marker-horizontal.noUi-marker,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .content ul li:before,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-block-title .gf-clear,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .facets-block-wrapper--vertical,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .facets-controls-wrapper,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .facets-toggle,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .facets--horizontal .facets__form {
     display: none !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .globo-dropdown-custom__options {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .globo-dropdown-custom__options {
     background: var(--color-background);
     border: var(--style-border-popover);
     border-radius: var(--style-border-radius-popover);
@@ -389,24 +389,24 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     transition: content-visibility var(--animation-speed-slow) allow-discrete, padding-block var(--animation-speed-slow) var(--animation-easing), opacity var(--animation-speed-slow) var(--animation-easing), block-size var(--animation-speed-slow) var(--animation-easing);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by.active .globo-dropdown-custom__options {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by.active .globo-dropdown-custom__options {
     opacity: 1;
     block-size: auto;
     padding-block: calc(var(--drawer-padding) / 2);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .globo-dropdown-custom__options li {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .globo-dropdown-custom__options li {
     font-size: var(--font-paragraph--size) !important;
     font-weight: var(--font-paragraph--weight);
     padding: var(--padding-2xs) var(--padding-3xl);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .globo-dropdown-custom__options li:hover {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .globo-dropdown-custom__options li:hover {
     background-color: rgb(from var(--color-foreground) r g b / 8%);
     border-radius: calc(var(--style-border-radius-popover) / 2);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by:before {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by:before {
     background-image: none !important;
     content: "\f107";
     --icon-opacity: .5;
@@ -421,13 +421,13 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     transition: all var(--animation-speed) var(--animation-easing);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by:hover:before {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by:hover:before {
     --icon-opacity: 1;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .sort-by.limit-by:before,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .sort-by:before,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .sort-by:before {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .sort-by.limit-by:before,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .sort-by:before,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .sort-by:before {
     top: 50%;
     right: .5rem;
     transform: translate(0, -50%);
@@ -439,13 +439,13 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     height: fit-content;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .limit-by:has(#setLimit:focus-visible):before,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by.active:before {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .limit-by:has(#setLimit:focus-visible):before,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by.active:before {
     transform: translate(0, -50%) rotate(180deg) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .gf-refine-toggle-mobile,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .gf-refine-toggle-mobile {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .gf-refine-toggle-mobile,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .gf-refine-toggle-mobile {
     border-radius: var(--style-border-radius-inputs);
     border: var(--style-border-width) solid var(--color-border) !important;
     font-weight: var(--font-paragraph--weight) !important;
@@ -454,94 +454,94 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     font-size: var(--font-paragraph--size) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .gf-refine-toggle-mobile span,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .gf-refine-toggle-mobile button,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .gf-refine-toggle-mobile span,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .gf-refine-toggle-mobile button {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .gf-refine-toggle-mobile span,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .gf-refine-toggle-mobile button,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .gf-refine-toggle-mobile span,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .gf-refine-toggle-mobile button {
     height: 41px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by select.sortby-select {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by select.sortby-select {
     height: 41px !important;
     text-transform: var(--facet-label-transform) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by label.sort-by-toggle {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by label.sort-by-toggle {
     height: 41px !important;
     line-height: 41px !important;
     text-transform: var(--facet-label-transform) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-box li ul {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-box li ul {
     border-left: 1px dotted var(--color-foreground);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-box ul li>div:before {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-box ul li>div:before {
     border-bottom: 1px dotted var(--color-foreground);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul.gf-option-box li:not(.is-collapsed)>div>button+span:after,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul.gf-option-box li:not(.is-collapsed)>div>a+span:after {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul.gf-option-box li:not(.is-collapsed)>div>button+span:after,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul.gf-option-box li:not(.is-collapsed)>div>a+span:after {
     border-top: 5px solid var(--color-foreground);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul.gf-option-box li.is-collapsed>div>button+span:after,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul.gf-option-box li.is-collapsed>div>a+span:after {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul.gf-option-box li.is-collapsed>div>button+span:after,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul.gf-option-box li.is-collapsed>div>a+span:after {
     border-bottom: 5px solid var(--color-foreground);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button {
     border: 1px solid rgb(from var(--color-foreground) r g b / 35%) !important;
     background: transparent !important;
     border-radius: 5px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button.checked {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button.checked {
     background: var(--color-foreground) !important;
     border: 1px solid var(--color-foreground) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button:hover span,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle a:hover span,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle a.checked span,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button.checked span {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button:hover span,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle a:hover span,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle a.checked span,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-box-rectangle.gf-option-block ul li.gf-box-rectangle button.checked span {
     color: var(--color-background) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block.gf-option-block-select select,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-btn-show-more {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block.gf-option-block-select select,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-btn-show-more {
     font-weight: var(--font-paragraph--weight) !important;
     font-size: var(--font-paragraph--size) !important;
     color: var(--color-foreground) !important;
     margin: 0 0 1rem;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-btn-show-more {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-btn-show-more {
     color: var(--color-foreground-muted) !important;
     text-decoration: underline;
     text-underline-offset: .2rem;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block.gf-option-block-select select {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block.gf-option-block-select select {
     height: auto;
     background-color: var(--color-input-background);
     border-radius: 4px;
     color: var(--color-foreground-muted) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block.gf-option-block-select select:hover {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block.gf-option-block-select select:hover {
     color: rgb(from var(--color-foreground) r g b / 90%) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left #gf-tree .globo-selected-items-wrapper .globo-selected-items {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left #gf-tree .globo-selected-items-wrapper .globo-selected-items {
     border-bottom: var(--style-border-width) solid var(--color-border);
     padding-bottom: 10px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .globo-selected-items-wrapper .selected-item>a {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .globo-selected-items-wrapper .selected-item>a {
     --pills-pill-background-color: rgb(from var(--color-foreground) r g b / 5%);
     font-size: var(--font-size--xs) !important;
     background-color: var(--pills-pill-background-color);
@@ -555,46 +555,46 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     transition: background-color var(--animation-speed) var(--animation-easing);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .globo-selected-items-wrapper .selected-item>a:hover {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .globo-selected-items-wrapper .selected-item>a:hover {
     --pills-pill-background-color: rgb(from var(--color-foreground) r g b / 8%);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a>.selected-item>span,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container>div>div.globo-selected-items-wrapper>ul>li>a>span.selected-item>span.hidden-xs,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a>span.selected-item>span {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a>.selected-item>span,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container>div>div.globo-selected-items-wrapper>ul>li>a>span.selected-item>span.hidden-xs,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a>span.selected-item>span {
     display: none;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .globo-selected-items-wrapper .globo-selected-items span.selected-item strong,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .globo-selected-items-wrapper .globo-selected-items span.selected-item strong,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a>span.selected-item>strong {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .globo-selected-items-wrapper .globo-selected-items span.selected-item strong,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .globo-selected-items-wrapper .globo-selected-items span.selected-item strong,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a>span.selected-item>strong {
     font-weight: var(--font-paragraph--weight) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a>.gf-clear,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container>div>div.globo-selected-items-wrapper>ul>li>a>span.gf-clear,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a>span.gf-clear {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a>.gf-clear,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container>div>div.globo-selected-items-wrapper>ul>li>a>span.gf-clear,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a>span.gf-clear {
     margin-left: 5px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree div.globo-selected-items-wrapper>ul>li>a>span.gf-clear>svg>path,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container div.globo-selected-items-wrapper>ul>li>a>span.gf-clear>svg>path,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a>span.gf-clear svg path {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree div.globo-selected-items-wrapper>ul>li>a>span.gf-clear>svg>path,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container div.globo-selected-items-wrapper>ul>li>a>span.gf-clear>svg>path,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree>div.globo-selected-items-wrapper>div.gf-block-content.globo-selected-items>div.selected-item>a>span.gf-clear svg path {
     fill: var(--color-foreground) !important;
     opacity: .5;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .selected-item.gf-option-label {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .selected-item.gf-option-label {
     margin: 0 8px 8px 0;
     display: inline-flex;
     width: auto;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a.clear-refinements,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-refine-toggle,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .globo-selected-items-wrapper .selected-item>a.clear-refinements {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a.clear-refinements,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-refine-toggle,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .globo-selected-items-wrapper .selected-item>a.clear-refinements {
     font-size: var(--font-paragraph--size) !important;
     color: var(--color-primary) !important;
     border-color: transparent !important;
@@ -607,77 +607,77 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     font-weight: var(--font-paragraph--weight) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>.clear-refinements:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-refine-toggle:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container .globo-selected-items-wrapper .selected-item>.clear-refinements:hover {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>.clear-refinements:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-refine-toggle:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container .globo-selected-items-wrapper .selected-item>.clear-refinements:hover {
     background: transparent !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text button,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch button {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button {
     transition: box-shadow .25s ease-in-out, -webkit-box-shadow .25s ease-in-out;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text a>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text button>span:not(.gf-option-value, .gf-label) {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text a>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button>span:not(.gf-option-value, .gf-label) {
     margin-right: 6px;
     border: 1px solid rgb(from var(--color-foreground) r g b / 15%);
     overflow: hidden;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch a>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text a>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch button>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text button>span:not(.gf-option-value, .gf-label) {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch a>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text a>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button>span:not(.gf-option-value, .gf-label) {
     width: 18px;
     height: 18px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-two-color .bottom-color {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-two-color .bottom-color {
     border-bottom: 16px solid transparent;
     border-left: 16px solid transparent;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch button.checked>span:not(.gf-option-value)>.bottom-color,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch button>span:not(.gf-option-value):hover>.bottom-color,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text button.checked>span:not(.gf-option-value)>.bottom-color,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text button>span:not(.gf-option-value):hover>.bottom-color,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch a.checked>span:not(.gf-option-value)>.bottom-color,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch a>span:not(.gf-option-value):hover>.bottom-color,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text a.checked>span:not(.gf-option-value)>.bottom-color,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text a>span:not(.gf-option-value):hover>.bottom-color {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button.checked>span:not(.gf-option-value)>.bottom-color,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button>span:not(.gf-option-value):hover>.bottom-color,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button.checked>span:not(.gf-option-value)>.bottom-color,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button>span:not(.gf-option-value):hover>.bottom-color,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch a.checked>span:not(.gf-option-value)>.bottom-color,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch a>span:not(.gf-option-value):hover>.bottom-color,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text a.checked>span:not(.gf-option-value)>.bottom-color,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text a>span:not(.gf-option-value):hover>.bottom-color {
     border-width: 14px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch a>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch button>span:not(.gf-option-value, .gf-label) {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch a>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button>span:not(.gf-option-value, .gf-label) {
     border: 1px solid var(--color-foreground);
     overflow: hidden;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch:not(.swatch-round) a>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text:not(.swatch-round) a>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch:not(.swatch-round) button>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text:not(.swatch-round) button>span:not(.gf-option-value, .gf-label) {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch:not(.swatch-round) a>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text:not(.swatch-round) a>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch:not(.swatch-round) button>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text:not(.swatch-round) button>span:not(.gf-option-value, .gf-label) {
     border-radius: 5px;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text button:hover>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch button:hover>span,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text button.checked>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch button.checked>span:not(.gf-option-value, .gf-label) {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button:hover>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button:hover>span,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button.checked>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button.checked>span:not(.gf-option-value, .gf-label) {
     border-width: 2px;
     box-shadow: 0 0 0px 1px var(--color-foreground);
     border-style: solid;
     border-color: var(--color-background);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch-text button.checked>span:not(.gf-option-value, .gf-label),
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block-swatch button.checked>span:not(.gf-option-value, .gf-label) {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button.checked>span:not(.gf-option-value, .gf-label),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button.checked>span:not(.gf-option-value, .gf-label) {
     box-shadow: 0 0 0 1px var(--color-foreground) !important;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme span.gf-close-canvas {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) span.gf-close-canvas {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -688,13 +688,13 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     opacity: .8;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-filter-footer {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-filter-footer {
     border: 0;
     padding: var(--padding-2xl) var(--padding-lg) var(--padding-md);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-filter-footer button,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf_pagination_wrap button.gf-loadmore-btn {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-filter-footer button,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf_pagination_wrap button.gf-loadmore-btn {
     --button-color: var(--color-primary-button-text);
     --button-background-color: var(--color-primary-button-background);
     --button-border-color: var(--color-primary-button-border);
@@ -723,25 +723,25 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     height: auto;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-filter-footer button b {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-filter-footer button b {
     font-weight: var(--button-font-weight-primary);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-filter-footer button:hover,
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf_pagination_wrap button.gf-loadmore-btn:hover {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-filter-footer button:hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf_pagination_wrap button.gf-loadmore-btn:hover {
     --button-color: var(--color-primary-button-hover-text);
     --button-background-color: var(--color-primary-button-hover-background);
     --button-border-color: var(--color-primary-button-hover-border);
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-filter-contents:not(.gf-grid--4-col) .is-collapsed .gf-block-content {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-filter-contents:not(.gf-grid--4-col) .is-collapsed .gf-block-content {
     block-size: 0;
     opacity: 0;
     padding: 0;
     overflow: hidden;
 }
 
-.theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-filter-contents:not(.gf-grid--4-col) .gf-block-content {
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-filter-contents:not(.gf-grid--4-col) .gf-block-content {
     margin-top: 0;
     padding-block: 15px 0;
     display: block !important;
@@ -754,23 +754,23 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
 }
 
 @media (width < 769px) {
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree {
         width: 95vw !important;
         max-width: 500px;
         left: -500px;
         transition: all var(--animation-speed) var(--animation-easing);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.offcanvas-open #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).offcanvas-open #gf-tree {
         left: 0;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-filter-header {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-filter-header {
         border-bottom: none;
         padding: var(--padding-xs) var(--drawer-padding);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-filter-header>div.gf-filter-heading {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-filter-header>div.gf-filter-heading {
         font-family: var(--font-h3--family);
         font-style: var(--font-h3--style);
         font-weight: var(--font-h3--weight);
@@ -780,102 +780,102 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
         text-transform: var(--font-h3--case);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-filter-contents {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-filter-contents {
         padding: 0 var(--drawer-padding);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .globo-selected-items-wrapper>.globo-selected-items {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .globo-selected-items-wrapper>.globo-selected-items {
         padding: .85rem var(--drawer-padding) 0 !important;
         border-bottom: 0 !important;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .globo-selected-items-wrapper .gf-block-title .h3 {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .globo-selected-items-wrapper .gf-block-title .h3 {
         visibility: hidden;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-tree .globo-selected-items-wrapper .gf-block-title {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .globo-selected-items-wrapper .gf-block-title {
         padding: 0 var(--drawer-padding);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-option-block:first-child {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-option-block:first-child {
         border-top: var(--style-border-width) solid var(--color-border);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme body>#gf-tree .gf-option-block:last-child {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) body>#gf-tree .gf-option-block:last-child {
         border-bottom: 0;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-controls-container {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-controls-container {
         padding: 0 1rem 1rem;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .sort-by {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .sort-by {
         border-radius: var(--style-border-radius-inputs);
         border: var(--style-border-width) solid var(--color-border) !important;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-RadioButton,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block .gf-Checkbox {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-RadioButton,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .gf-Checkbox {
         --checkbox-size: 22px;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .checked .gf-Checkbox:after {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .checked .gf-Checkbox:after {
         top: 10px;
         width: 4px;
         height: 11px;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li a,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-option-block ul li button {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button {
         --facets-gap: 22px;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-products {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-products {
         margin: 0;
     }
 }
 
 @media (width >=769px) {
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme div.facets-block-wrapper--vertical~#ResultsList {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) div.facets-block-wrapper--vertical~#ResultsList {
         grid-column: 1 / var(--full-width-column-number);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left #gf-tree {
         padding: 0 !important;
         width: 25%;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left #gf-tree:not(.spf-hidden)+#gf-grid {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left #gf-tree:not(.spf-hidden)+#gf-grid {
         width: 75%;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left #gf-tree:not(.spf-hidden)+#gf-grid,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-left #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left #gf-tree:not(.spf-hidden)+#gf-grid,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-left #gf-tree {
         padding-top: 0 !important;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme:not(.gf-offcanvas) .gf-actions,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #gf-products {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)):not(.gf-offcanvas) .gf-actions,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-products {
         margin: 0;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.offcanvas-open #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).offcanvas-open #gf-tree {
         border-color: transparent;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree {
         border-bottom: 0;
         margin-bottom: 0;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas #gf-controls-container,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas #gf-controls-container,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree {
         padding-top: 1rem;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas #gf-controls-container,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-grid .gf-actions {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas #gf-controls-container,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-grid .gf-actions {
         --padding-block-start: 0px;
         --padding-block-end: max(20px, calc(var(--spacing-scale) * 24px));
         --padding-inline-start: max(20px, calc(var(--spacing-scale) * 40px));
@@ -883,20 +883,20 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
         padding-inline: var(--padding-inline-start) var(--padding-inline-end);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one .gf-option-block.is-collapsed {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one .gf-option-block.is-collapsed {
         overflow: hidden;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one .gf-filter-contents .gf-option-block .gf-block-title .h3,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one .gf-filter-contents .gf-option-block .gf-block-title h3,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one .gf-block-content,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme #setLimit option,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents-inner {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one .gf-filter-contents .gf-option-block .gf-block-title .h3,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one .gf-filter-contents .gf-option-block .gf-block-title h3,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one .gf-block-content,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #setLimit option,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents-inner {
         background: var(--color-background);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one .gf-filter-contents:not(.gf-grid--4-col) .gf-block-content,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents.gf-grid--4-col .gf-filter-contents-inner {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one .gf-filter-contents:not(.gf-grid--4-col) .gf-block-content,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents.gf-grid--4-col .gf-filter-contents-inner {
         box-shadow: var(--shadow-popover);
         border: var(--style-border-popover);
         background-color: var(--color-background);
@@ -905,7 +905,7 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
         padding: calc(var(--padding-md) + var(--style-border-width-inputs));
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one .globo-selected-items-wrapper {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one .globo-selected-items-wrapper {
         margin: 0;
     }
 
@@ -913,19 +913,19 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
         display: none !important;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme .gf-grid--1-col .gf-option-block:not(.gf-option-block-select, .gf-option-block-slider) .gf-option-box {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-grid--1-col .gf-option-block:not(.gf-option-block-select, .gf-option-block-slider) .gf-option-box {
         display: grid;
         grid-template-columns: 1fr;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one .gf-filter-contents:not(.gf-grid--4-col) .gf-block-content {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one .gf-filter-contents:not(.gf-grid--4-col) .gf-block-content {
         margin-top: var(--padding-sm);
         width: max-content !important;
         max-width: var(--facets-panel-width);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-option-block .gf-block-title .h3,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-option-block .gf-block-title h3 {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-option-block .gf-block-title .h3,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-option-block .gf-block-title h3 {
         --facets-hover-opacity: 100%;
         border: 0;
         padding: 9px 1rem 0 0;
@@ -935,38 +935,38 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
         font-size: var(--font-paragraph--size) !important;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:not(.is-collapsed)) .gf-option-block.is-collapsed .gf-block-title h3,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:not(.is-collapsed)) .gf-option-block.is-collapsed .gf-block-title .h3,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:hover) .gf-option-block.is-collapsed .gf-block-title h3,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:hover) .gf-option-block.is-collapsed .gf-block-title .h3 {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:not(.is-collapsed)) .gf-option-block.is-collapsed .gf-block-title h3,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:not(.is-collapsed)) .gf-option-block.is-collapsed .gf-block-title .h3,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:hover) .gf-option-block.is-collapsed .gf-block-title h3,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:hover) .gf-option-block.is-collapsed .gf-block-title .h3 {
         --facets-hover-opacity: 75%;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:hover) .gf-option-block.is-collapsed .gf-block-title h3:hover,
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:hover) .gf-option-block.is-collapsed .gf-block-title .h3:hover {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:hover) .gf-option-block.is-collapsed .gf-block-title h3:hover,
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .gf-filter-contents:not(.gf-grid--4-col) .gf-filter-contents-inner:has(.gf-option-block:hover) .gf-option-block.is-collapsed .gf-block-title .h3:hover {
         --facets-hover-opacity: 100%;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-top_one #gf-tree .sort-by label span {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-top_one #gf-tree .sort-by label span {
         margin-left: 10px;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas #gf-tree {
         width: 500px !important;
         left: -500px;
         transition: all var(--animation-speed) var(--animation-easing);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas.offcanvas-open #gf-tree {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas.offcanvas-open #gf-tree {
         left: 0;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas body>#gf-tree .gf-filter-header {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas body>#gf-tree .gf-filter-header {
         border-bottom: none;
         padding: var(--padding-xs) var(--drawer-padding);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas body>#gf-tree .gf-filter-header>div.gf-filter-heading {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas body>#gf-tree .gf-filter-header>div.gf-filter-heading {
         font-family: var(--font-h3--family);
         font-style: var(--font-h3--style);
         font-weight: var(--font-h3--weight);
@@ -976,24 +976,24 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
         text-transform: var(--font-h3--case);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas body>#gf-tree .gf-filter-contents {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas body>#gf-tree .gf-filter-contents {
         padding: 0 var(--drawer-padding);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas body>#gf-tree .globo-selected-items-wrapper>.globo-selected-items {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas body>#gf-tree .globo-selected-items-wrapper>.globo-selected-items {
         padding: 0 var(--drawer-padding) !important;
         border-bottom: 0;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas body>#gf-tree .gf-option-block:first-child {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas body>#gf-tree .gf-option-block:first-child {
         border-top: var(--style-border-width) solid var(--color-border);
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas #gf-tree .globo-selected-items-wrapper .gf-block-title .h3 {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas #gf-tree .globo-selected-items-wrapper .gf-block-title .h3 {
         visibility: hidden;
     }
 
-    .theme-store-id-2481.spf-has-filter.spf-filter-tree-theme.gf-offcanvas #gf-tree .globo-selected-items-wrapper .gf-block-title {
+    .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)).gf-offcanvas #gf-tree .globo-selected-items-wrapper .gf-block-title {
         padding: 0 var(--drawer-padding);
     }
 
