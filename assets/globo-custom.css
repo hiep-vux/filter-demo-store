@@ -929,6 +929,16 @@ span.header-logo__image-container.header-logo__image-container--original {
 .variations_button{
   display: none !important;
 }
+.gfqv-swatch>label {
+    font-size: 13.5px !important;
+    font-weight: 500 !important;
+    margin-bottom: 9px;
+    text-transform: none !important;
+    color: rgb(109, 109, 104);
+}
+ul.gfqv-swatch-values {
+    margin: 0;
+}
 .size-medium .gfqv-product__swatch-outer:has(.gfqv-swatch-color),
 span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
     border-radius: 50%;
