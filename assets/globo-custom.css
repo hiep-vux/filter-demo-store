@@ -1038,7 +1038,7 @@ span.gfqv-product__swatch-inner:has(.gfqv-swatch-color){
 .size-medium .gfqv-product__swatch-outer {
     height: 32px !important;
     min-width: 32px !important;
-    padding: 3.5px !important;
+    padding: 3px !important;
 }
 .size-medium.gfqv-swatch-value:not(.is-selected) .gfqv-product__swatch-outer{
     padding: 0 !important;
