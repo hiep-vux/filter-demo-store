@@ -110,12 +110,12 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     font-weight: 500 !important;
 }
 
-.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a:hover span.gf-count,
+/* .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a:hover span.gf-count,
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button:hover span.gf-count,
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a:hover,
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button:hover {
     color: rgb(from var(--color-foreground) r g b / 90%) !important;
-}
+} */
 
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button.gf-controls-search-button svg path,
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) #gf-tree .gf-filter-header .gf-close-canvas svg path,
