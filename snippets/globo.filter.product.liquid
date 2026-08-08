@@ -103,7 +103,7 @@
                 {%- for value in option.values -%}
                   {%- assign swatch = option.swatches[forloop.index0] -%}
                   {%- assign fallback_swatch_color = value | downcase -%}
-                  {%- case fallback_swatch_color -%}
+                  {% comment %} {%- case fallback_swatch_color -%}
                     {%- when 'chalk' -%}{%- assign fallback_swatch_color = '#e9e5da' -%}
                     {%- when 'cream' -%}{%- assign fallback_swatch_color = '#f3ead3' -%}
                     {%- when 'ivory' -%}{%- assign fallback_swatch_color = '#fffff0' -%}
@@ -112,7 +112,7 @@
                     {%- when 'tan' -%}{%- assign fallback_swatch_color = '#d2b48c' -%}
                     {%- when 'nude' -%}{%- assign fallback_swatch_color = '#dec0a5' -%}
                     {%- when 'multi' or 'multicolor' or 'multi-color' -%}{%- assign fallback_swatch_color = 'conic-gradient(#e75b52, #efca4a, #66a56f, #668bc4, #e75b52)' -%}
-                  {%- endcase -%}
+                  {%- endcase -%} {% endcomment %}
                   <span data-option="{{optionIndexNumber}}" data-option-value="{{value | escape}}" class="spf-product__swatch{% if product.selected_or_first_available_variant and product.selected_or_first_available_variant[optionIndex] == value %} is-selected{% endif %}{% if swatch != blank and swatch.available == false %} soldout{% endif %}" title="{{value | escape}}">
                     <span translatable class="spf-product__swatch-inner">
                       {%- if swatch.mode == 4 and swatch.image -%}
