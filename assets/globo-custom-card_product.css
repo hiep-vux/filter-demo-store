@@ -298,7 +298,7 @@
   cursor: pointer;
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
-#gf-products .spf-product-card .spf-product__form-btn-addtocart.is-loading,
+#gf-products .spf-product-card .spf-product__form-btn-addtocart.is-adding,
 #gf-products .spf-product-card .spf-product__form-btn-addtocart:hover:not(:disabled) {
   color: #fff !important;
   background: #171717 !important;
