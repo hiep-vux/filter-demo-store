@@ -161,8 +161,8 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button:not(.checked):hover>.gf-Checkbox,
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a:not(.checked):hover>.gf-RadioButton,
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) a:not(.checked):hover>.gf-Checkbox {
-    border-color: rgb(from var(--color-foreground) r g b / 40%);
-    background-color: rgb(from var(--color-foreground) r g b / 5%);
+    border-color: rgb(from var(--color-foreground) r g b / 35%);
+    background-color: var(--color-foreground);
 }
 
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) button.checked:hover>.gf-RadioButton,
