@@ -53,6 +53,12 @@ class GloboDemoControls {
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleViewportChange = this.handleViewportChange.bind(this);
+    this.handleThemeDrawerOpen = this.handleThemeDrawerOpen.bind(this);
+    this.handleThemeDrawerClose = this.handleThemeDrawerClose.bind(this);
+    this.updateToolbarHeight = this.updateToolbarHeight.bind(this);
+    this.toolbarResizeObserver = typeof ResizeObserver === 'function'
+      ? new ResizeObserver(this.updateToolbarHeight)
+      : null;
   }
 
   init() {
@@ -60,6 +66,16 @@ class GloboDemoControls {
 
     this.root.addEventListener('click', this.handleClick);
     this.mobileBreakpoint.addEventListener('change', this.handleViewportChange);
+    document.addEventListener('theme-drawer:open', this.handleThemeDrawerOpen);
+    document.addEventListener('theme-drawer:close', this.handleThemeDrawerClose);
+    window.addEventListener('resize', this.updateToolbarHeight);
+    this.toolbarResizeObserver?.observe(this.toolbar);
+
+    this.updateToolbarHeight();
+    const cartOpen = Boolean(document.querySelector('#cart-drawer[open]'));
+    this.root.dataset.demoCartOpen = String(cartOpen);
+    if (cartOpen) this.state.guideOpen = false;
+
     this.restoreGuideProgress();
     this.updateGuideProgress();
     this.render({ emit: false });
@@ -68,6 +84,50 @@ class GloboDemoControls {
   destroy() {
     this.root?.removeEventListener('click', this.handleClick);
     this.mobileBreakpoint.removeEventListener('change', this.handleViewportChange);
+    document.removeEventListener('theme-drawer:open', this.handleThemeDrawerOpen);
+    document.removeEventListener('theme-drawer:close', this.handleThemeDrawerClose);
+    window.removeEventListener('resize', this.updateToolbarHeight);
+    this.toolbarResizeObserver?.disconnect();
+  }
+
+  updateToolbarHeight() {
+    if (!this.root || !this.toolbar) return;
+    const height = Math.ceil(this.toolbar.getBoundingClientRect().height);
+    this.root.style.setProperty('--gpf-demo-toolbar-height', `${height}px`);
+  }
+
+  /** @param {CustomEvent} event */
+  handleThemeDrawerOpen(event) {
+    const drawer = event.target instanceof Element
+      ? event.target.closest('theme-drawer')
+      : null;
+    if (drawer?.id !== 'cart-drawer') return;
+
+    this.root.dataset.demoCartOpen = 'true';
+    if (this.state.guideOpen) this.setState({ guideOpen: false });
+  }
+
+  /** @param {CustomEvent} event */
+  handleThemeDrawerClose(event) {
+    const drawer = event.target instanceof Element
+      ? event.target.closest('theme-drawer')
+      : null;
+    if (drawer?.id !== 'cart-drawer') return;
+
+    this.root.dataset.demoCartOpen = 'false';
+  }
+
+  async openGuide() {
+    const cartDrawer = document.querySelector('#cart-drawer[open]');
+
+    if (cartDrawer) {
+      await customElements.whenDefined('theme-drawer');
+      if (typeof cartDrawer.close === 'function') {
+        await cartDrawer.close();
+      }
+    }
+
+    this.setState({ guideOpen: true });
   }
 
   refreshGuide() {
@@ -116,13 +176,17 @@ class GloboDemoControls {
         this.reset();
         break;
       case 'toggle-guide':
-        this.setState({ guideOpen: !this.state.guideOpen });
+        if (this.state.guideOpen) {
+          this.setState({ guideOpen: false });
+        } else {
+          this.openGuide();
+        }
         break;
       case 'close-guide':
         this.setState({ guideOpen: false });
         break;
       case 'open-guide':
-        this.setState({ guideOpen: true });
+        this.openGuide();
         break;
     }
   }

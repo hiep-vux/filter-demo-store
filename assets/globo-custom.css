@@ -474,6 +474,10 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
   transform: translateY(-1px);
 }
 
+#gpf-demo[data-demo-cart-open="true"] .gpf-demo-guide__trigger {
+  display: none !important;
+}
+
 .gpf-demo-guide__trigger-dot {
   flex: 0 0 auto;
   width: 7px;
@@ -545,6 +549,14 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
 
 .gpf-demo-guide-section {
   display: contents;
+}
+
+@media screen and (min-width: 990px) {
+  #gpf-demo #cart-drawer .theme-drawer__dialog {
+    top: var(--gpf-demo-toolbar-height, 56px);
+    z-index: 79;
+    height: calc(100dvh - var(--gpf-demo-toolbar-height, 56px));
+  }
 }
 
 .gpf-demo-guide__header {
