@@ -11,6 +11,7 @@
   "current": {
     "logo_height": 36,
     "logo_height_mobile": 28,
+    "sf_background": "#171717",
     "page_text_color": "#171717",
     "type_body_font": "assistant_n4",
     "type_subheading_font": "assistant_n4",
@@ -102,7 +103,6 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
-    "sf_background": "#171717",
     "content_for_index": [],
     "blocks": {
       "5059203847231188605": {
