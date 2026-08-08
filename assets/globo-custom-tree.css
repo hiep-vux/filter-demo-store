@@ -657,13 +657,13 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text a>span:not(.gf-option-value, .gf-label),
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button>span:not(.gf-option-value, .gf-label),
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch-text button>span:not(.gf-option-value, .gf-label) {
-    width: 25px !important;
-    height: 25px !important;
+    width: 26px !important;
+    height: 26px !important;
 }
 
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-two-color .bottom-color {
-    border-bottom: 24px solid transparent !important;
-    border-left: 24px solid transparent !important;
+    border-bottom: 24px solid transparent;
+    border-left: 24px solid transparent;
 }
 
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button.checked>span:not(.gf-option-value)>.bottom-color,
@@ -679,8 +679,9 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
 
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch a>span:not(.gf-option-value, .gf-label),
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch button>span:not(.gf-option-value, .gf-label) {
-    border: 1px solid #f0f0f0 !important;
+    border: 0;
     overflow: hidden !important;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px inset;
 }
 
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block-swatch:not(.swatch-round) a>span:not(.gf-option-value, .gf-label),
