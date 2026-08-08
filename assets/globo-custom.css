@@ -560,6 +560,7 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
   }
 
   #gpf-demo[data-demo-guide="open"] #cart-drawer .theme-drawer__dialog--closing {
+    z-index: 69;
     animation-name: gpf-demo-cart-slide-out-with-guide;
   }
 
