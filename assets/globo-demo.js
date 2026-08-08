@@ -1,4 +1,4 @@
-import { CartLinesUpdateEvent } from '@shopify/events';
+import { CartErrorEvent, CartLinesUpdateEvent } from '@shopify/events';
 
 const ACTIVE_CLASS = 'gpf-demo-segmented-control__button--active';
 const DEMO_SESSION_KEY = 'globo-demo:session-state';
@@ -606,3 +606,152 @@ document.addEventListener('cart:added', function (event) {
     console.error('[globo-demo] Unable to synchronize the cart UI.', error);
   });
 });
+
+const pendingQuickViewAdds = new WeakSet();
+
+/**
+ * Finds the form and modal for Globo's dynamically rendered quick view.
+ * @param {Element} element
+ */
+function getGloboQuickViewContext(element) {
+  const modal = element.closest('#gfqv-modal');
+  if (!modal) return null;
+
+  const form = element.closest('form')
+    || modal.querySelector('form[action*="/cart/add"]')
+    || modal.querySelector('form');
+
+  return { modal, form };
+}
+
+/**
+ * Creates an Ajax cart payload while preserving variant, quantity, selling
+ * plan and line-item properties from the quick-view form.
+ * @param {Element} modal
+ * @param {HTMLFormElement | null} form
+ */
+function createGloboQuickViewFormData(modal, form) {
+  const formData = form ? new FormData(form) : new FormData();
+  const variantControl = modal.querySelector('[name="id"]');
+  const quantityControl = modal.querySelector('[name="quantity"]');
+
+  if (!formData.get('id') && variantControl instanceof HTMLInputElement) {
+    formData.set('id', variantControl.value);
+  } else if (!formData.get('id') && variantControl instanceof HTMLSelectElement) {
+    formData.set('id', variantControl.value);
+  }
+
+  if (!formData.get('quantity')) {
+    const quantity = quantityControl instanceof HTMLInputElement ? quantityControl.value : '1';
+    formData.set('quantity', quantity || '1');
+  }
+
+  return formData;
+}
+
+/** @param {Element} modal */
+function closeGloboQuickView(modal) {
+  const closeButton = modal.querySelector('.gfqv-close-modal');
+  if (closeButton instanceof HTMLElement) closeButton.click();
+}
+
+/**
+ * Adds the selected quick-view variant without allowing the app's native form
+ * submission to navigate to the cart page.
+ * @param {Element} modal
+ * @param {HTMLFormElement | null} form
+ * @param {Element | null} trigger
+ */
+async function addGloboQuickViewToCart(modal, form, trigger) {
+  const requestRoot = form || modal;
+  if (pendingQuickViewAdds.has(requestRoot)) return;
+
+  const formData = createGloboQuickViewFormData(modal, form);
+  if (!formData.get('id')) {
+    document.dispatchEvent(
+      new CartErrorEvent({
+        error: 'Please select a product variant.',
+        code: 'INVALID',
+      })
+    );
+    return;
+  }
+
+  const button = trigger?.matches('button, input')
+    ? trigger
+    : trigger?.querySelector('button, input[type="submit"]') || modal.querySelector('#gfqv-btn');
+
+  pendingQuickViewAdds.add(requestRoot);
+  trigger?.setAttribute('aria-busy', 'true');
+  if (button instanceof HTMLButtonElement || button instanceof HTMLInputElement) {
+    button.disabled = true;
+  }
+
+  try {
+    const response = await fetch(Theme.routes.cart_add_url, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      body: formData,
+      credentials: 'same-origin',
+    });
+    const addedItem = await response.json();
+
+    if (!response.ok || addedItem.status) {
+      throw new Error(addedItem.description || addedItem.message || 'Unable to add this item to the cart.');
+    }
+
+    closeGloboQuickView(modal);
+    document.dispatchEvent(
+      new CustomEvent('cart:added', {
+        detail: {
+          item: addedItem,
+          source: 'globo-quick-view',
+        },
+      })
+    );
+  } catch (error) {
+    console.error('[globo-demo] Quick-view add to cart failed.', error);
+    document.dispatchEvent(
+      new CartErrorEvent({
+        error: error instanceof Error ? error.message : 'Unable to add this item to the cart.',
+        code: 'INVALID',
+      })
+    );
+  } finally {
+    pendingQuickViewAdds.delete(requestRoot);
+    trigger?.removeAttribute('aria-busy');
+    if (button instanceof HTMLButtonElement || button instanceof HTMLInputElement) {
+      button.disabled = false;
+    }
+  }
+}
+
+document.addEventListener('click', function (event) {
+  const trigger = event.target instanceof Element
+    ? event.target.closest('#gfqv-btn-wrap, #gfqv-btn')
+    : null;
+  if (!trigger) return;
+
+  const context = getGloboQuickViewContext(trigger);
+  if (!context) return;
+
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  addGloboQuickViewToCart(context.modal, context.form, trigger);
+}, true);
+
+document.addEventListener('submit', function (event) {
+  const form = event.target instanceof HTMLFormElement ? event.target : null;
+  if (!form || !form.closest('#gfqv-modal')) return;
+  if (!form.querySelector('#gfqv-btn-wrap, #gfqv-btn') && !form.matches('[action*="/cart/add"]')) return;
+
+  const context = getGloboQuickViewContext(form);
+  if (!context) return;
+
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  addGloboQuickViewToCart(context.modal, context.form, form.querySelector('#gfqv-btn-wrap, #gfqv-btn'));
+}, true);
