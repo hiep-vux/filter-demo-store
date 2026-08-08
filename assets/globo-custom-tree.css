@@ -1020,7 +1020,6 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
 }
 
 .gf-option-block ul.gf-option-box {
-    overflow: unset;
-    width: 100%;
+    overflow: unset !important;
     overflow-x: visible !important;
 }
