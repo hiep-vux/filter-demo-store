@@ -98,7 +98,7 @@
             {%- assign optionIndex = 'option' | append: forloop.index -%}
             {%- assign optionIndexNumber = forloop.index -%}
             {%- assign normalized_option_name = option.name | downcase -%}
-            {%- if option.isSwatch or swatch_options contains normalized_option_name -%}
+            {%- if option.isSwatch or swatch_options contains normalized_option_name and option.name == 'color' -%}
               <div class="spf-product__swatchs round">
                 {%- for value in option.values -%}
                   {%- assign swatch = option.swatches[forloop.index0] -%}
