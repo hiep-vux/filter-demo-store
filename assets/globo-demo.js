@@ -74,7 +74,6 @@ class GloboDemoControls {
     this.updateToolbarHeight();
     const cartOpen = Boolean(document.querySelector('#cart-drawer[open]'));
     this.root.dataset.demoCartOpen = String(cartOpen);
-    if (cartOpen) this.state.guideOpen = false;
 
     this.restoreGuideProgress();
     this.updateGuideProgress();
@@ -104,7 +103,6 @@ class GloboDemoControls {
     if (drawer?.id !== 'cart-drawer') return;
 
     this.root.dataset.demoCartOpen = 'true';
-    if (this.state.guideOpen) this.setState({ guideOpen: false });
   }
 
   /** @param {CustomEvent} event */
@@ -117,16 +115,7 @@ class GloboDemoControls {
     this.root.dataset.demoCartOpen = 'false';
   }
 
-  async openGuide() {
-    const cartDrawer = document.querySelector('#cart-drawer[open]');
-
-    if (cartDrawer) {
-      await customElements.whenDefined('theme-drawer');
-      if (typeof cartDrawer.close === 'function') {
-        await cartDrawer.close();
-      }
-    }
-
+  openGuide() {
     this.setState({ guideOpen: true });
   }
 

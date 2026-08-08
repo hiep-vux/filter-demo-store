@@ -474,10 +474,6 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
   transform: translateY(-1px);
 }
 
-#gpf-demo[data-demo-cart-open="true"] .gpf-demo-guide__trigger {
-  display: none !important;
-}
-
 .gpf-demo-guide__trigger-dot {
   flex: 0 0 auto;
   width: 7px;
@@ -556,6 +552,33 @@ html[data-demo-loading="complete"] .demo-storefront-skeleton {
     top: var(--gpf-demo-toolbar-height, 56px);
     z-index: 79;
     height: calc(100dvh - var(--gpf-demo-toolbar-height, 56px));
+    transition: right var(--animation-speed) var(--animation-timing-fade-in);
+  }
+
+  #gpf-demo[data-demo-cart-open="true"][data-demo-guide="open"] #cart-drawer .theme-drawer__dialog[open] {
+    right: 330px;
+  }
+
+  #gpf-demo[data-demo-guide="open"] #cart-drawer .theme-drawer__dialog--closing {
+    animation-name: gpf-demo-cart-slide-out-with-guide;
+  }
+
+  #gpf-demo[data-demo-cart-open="true"][data-demo-guide="closed"] .gpf-demo-guide__trigger {
+    right: calc(var(--theme-drawer-width, var(--sidebar-width)) + 20px);
+  }
+
+  #gpf-demo[data-demo-cart-open="true"] .gpf-demo-guide__backdrop {
+    display: none !important;
+  }
+
+  @keyframes gpf-demo-cart-slide-out-with-guide {
+    from {
+      right: 330px;
+    }
+
+    to {
+      right: calc(-1 * var(--theme-drawer-width, var(--sidebar-width)));
+    }
   }
 }
 
