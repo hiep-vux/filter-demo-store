@@ -685,6 +685,8 @@ async function addGloboQuickViewToCart(modal, form, trigger) {
   trigger?.setAttribute('aria-busy', 'true');
   if (button instanceof HTMLButtonElement || button instanceof HTMLInputElement) {
     button.disabled = true;
+    button.classList.add('gpf-demo-add-to-cart--loading');
+    button.setAttribute('aria-busy', 'true');
   }
 
   try {
@@ -725,6 +727,8 @@ async function addGloboQuickViewToCart(modal, form, trigger) {
     trigger?.removeAttribute('aria-busy');
     if (button instanceof HTMLButtonElement || button instanceof HTMLInputElement) {
       button.disabled = false;
+      button.classList.remove('gpf-demo-add-to-cart--loading');
+      button.removeAttribute('aria-busy');
     }
   }
 }
