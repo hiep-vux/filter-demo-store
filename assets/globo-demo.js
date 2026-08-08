@@ -1,3 +1,5 @@
+import { CartLinesUpdateEvent } from '@shopify/events';
+
 const ACTIVE_CLASS = 'gpf-demo-segmented-control__button--active';
 const DEMO_SESSION_KEY = 'globo-demo:session-state';
 const LAYOUT_QUERY_PARAM = 'layout_filter';
@@ -493,3 +495,114 @@ window.addEventListener('globoFilterSearchDrawerOpened', function () {
 });
 // custom card product
 window.isAjaxCartEnabled = true;
+
+const CART_DRAWER_SECTION_ID = 'cart-drawer-section';
+let globoCartSyncQueue = Promise.resolve();
+
+/**
+ * Returns the added variant information when Globo includes it in the event.
+ * Falls back to the first Ajax cart item because the collection card adds one
+ * variant at a time.
+ * @param {CustomEvent} event
+ * @param {Record<string, any>} cart
+ */
+function getGloboAddedLine(event, cart) {
+  const detail = event.detail && typeof event.detail === 'object' ? event.detail : {};
+  const detailItems = Array.isArray(detail.items) ? detail.items : [];
+  const candidates = [
+    detail.item,
+    detail.data?.item,
+    detail.data,
+    ...detailItems,
+    detail,
+    cart.items?.[0],
+  ];
+  const item = candidates.find((candidate) => candidate && typeof candidate === 'object') || {};
+  const merchandiseId = item.merchandiseId
+    ?? item.variant_id
+    ?? item.variantId
+    ?? item.id
+    ?? cart.items?.[0]?.variant_id
+    ?? cart.items?.[0]?.id
+    ?? '';
+  const quantity = Number(item.quantity ?? detail.quantity ?? 1);
+
+  return {
+    merchandiseId: String(merchandiseId),
+    quantity: Number.isFinite(quantity) && quantity > 0 ? quantity : 1,
+  };
+}
+
+async function fetchGloboCartState() {
+  const cartUrl = `${Theme.routes.cart_url}.js`;
+  const sectionUrl = new URL(window.location.href);
+  sectionUrl.searchParams.set('section_id', CART_DRAWER_SECTION_ID);
+  sectionUrl.searchParams.sort();
+
+  const [cartResponse, sectionResponse] = await Promise.all([
+    fetch(cartUrl, {
+      headers: { Accept: 'application/json' },
+      credentials: 'same-origin',
+      cache: 'no-store',
+    }),
+    fetch(sectionUrl, {
+      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      credentials: 'same-origin',
+      cache: 'no-store',
+    }),
+  ]);
+
+  if (!cartResponse.ok) {
+    throw new Error(`Failed to refresh cart: ${cartResponse.status}`);
+  }
+  if (!sectionResponse.ok) {
+    throw new Error(`Failed to refresh cart drawer: ${sectionResponse.status}`);
+  }
+
+  const [cart, cartDrawerHTML] = await Promise.all([
+    cartResponse.json(),
+    sectionResponse.text(),
+  ]);
+
+  return { cart, cartDrawerHTML };
+}
+
+/** @param {CustomEvent} event */
+async function syncGloboCartWithTheme(event) {
+  const { cart, cartDrawerHTML } = await fetchGloboCartState();
+  const deferredEvent = CartLinesUpdateEvent.createPromise();
+  const addedLine = getGloboAddedLine(event, cart);
+
+  document.dispatchEvent(
+    new CartLinesUpdateEvent({
+      action: 'add',
+      context: 'product',
+      lines: [addedLine],
+      promise: deferredEvent.promise,
+      detail: {
+        source: 'globo-filter-product-card',
+      },
+    })
+  );
+
+  deferredEvent.resolve({
+    cart: CartLinesUpdateEvent.createCartFromAjaxResponse(cart),
+    detail: {
+      items: cart.items,
+      itemCount: cart.item_count,
+      sections: {
+        [CART_DRAWER_SECTION_ID]: cartDrawerHTML,
+      },
+      source: 'globo-filter-product-card',
+      didError: false,
+    },
+  });
+}
+
+document.addEventListener('cart:added', function (event) {
+  const syncTask = globoCartSyncQueue.then(() => syncGloboCartWithTheme(event));
+
+  globoCartSyncQueue = syncTask.catch((error) => {
+    console.error('[globo-demo] Unable to synchronize the cart UI.', error);
+  });
+});
