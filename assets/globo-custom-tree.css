@@ -93,7 +93,16 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
     padding: calc(var(--facets-gap)/ 2) 0;
     width: 100% !important;
 }
-
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a:not(:is(.gf-option-block-swatch,.gf-option-block-swatch-text)),
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button:not(:is(.gf-option-block-swatch,.gf-option-block-swatch-text)){
+    border-radius: 8px;
+    padding: 7px 10px !important;
+    margin-left: -10px;
+}
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a:not(:is(.gf-option-block-swatch,.gf-option-block-swatch-text)):hover,
+.theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button:not(:is(.gf-option-block-swatch,.gf-option-block-swatch-text)):hover{
+    background: #f6f6f4 !important;
+}
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block .checked span.gf-count,
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li a.checked,
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-option-block ul li button.checked {
