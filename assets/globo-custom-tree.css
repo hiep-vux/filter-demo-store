@@ -320,7 +320,7 @@ span[ref=viewMoreNext], span[ref=viewMorePrevious] {
 
 .theme-store-id-2481.spf-has-filter:is(.spf-filter-tree-theme, :not(.spf-filter-tree-theme)) .gf-range-inputs input[type=text] {
     font-size: var(--font-paragraph--size);
-    padding: var(--input-padding);
+    padding: 2px 10px;
     box-shadow: var(--input-box-shadow);
     border: none;
     outline: none !important;
